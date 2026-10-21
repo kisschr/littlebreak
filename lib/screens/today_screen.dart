@@ -16,6 +16,7 @@ import '../widgets/game_thumbnail.dart';
 import '../widgets/page.dart';
 import 'play/play_flow.dart';
 import 'premium_sheet.dart';
+import '../widgets/dialog.dart';
 
 /// "Heute": the day card with today's game, this week and tomorrow.
 class TodayScreen extends StatelessWidget {
@@ -66,11 +67,11 @@ class StreakButton extends StatelessWidget {
     return KpGlassButton(
       pill: true,
       semanticLabel: l.streakDays(days),
-      onPressed: () => GlassDialog.show<void>(
+      onPressed: () => KpDialog.show<void>(
         context: context,
         title: l.streakDays(days),
         message: l.streakExplain,
-        actions: [GlassDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
+        actions: [KpDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

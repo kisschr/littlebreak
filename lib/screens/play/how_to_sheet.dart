@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../../app/app_state.dart';
@@ -9,17 +8,14 @@ import '../../design/palette.dart';
 import '../../domain/models.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../../l10n/texts.dart';
+import '../../widgets/sheet.dart';
 
 /// "So geht's" — the rules of a game, with read-aloud for kids.
 Future<void> showHowToSheet(BuildContext context, GameType type) {
   final state = context.read<AppState>();
-  return GlassModalSheet.show<void>(
+  return showKpSheet<void>(
     context: context,
-    topBorderRadius: KpGlassStyle.sheetRadius,
-    bottomBorderRadius: KpGlassStyle.sheetRadius,
-    settings: KpGlassStyle.sheet,
     halfSize: 0.5,
-    detents: const {GlassSheetDetent.medium},
     builder: (_) => SingleChildScrollView(child: HowToBody(type: type, state: state)),
   );
 }

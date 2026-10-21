@@ -50,6 +50,15 @@ abstract final class KpGlassStyle {
     lightIntensity: 0.6,
     saturation: 1.6,
   );
+
+  /// Dialogs: the sheet glass, but nearly opaque so text reads over anything.
+  static const LiquidGlassSettings dialog = LiquidGlassSettings(
+    glassColor: Color(0xE0FFF8F0),
+    blur: 18,
+    thickness: 22,
+    lightIntensity: 0.6,
+    saturation: 1.6,
+  );
 }
 
 /// Text styles of the designs (Nunito, heavy weights).
@@ -97,7 +106,11 @@ class _KpBackgroundState extends State<KpBackground> with SingleTickerProviderSt
   void didChangeDependencies() {
     super.didChangeDependencies();
     final reduceMotion = MediaQuery.maybeDisableAnimationsOf(context) ?? false;
-    if (reduceMotion) {
+    // Every drift frame re-renders all glass above the blobs. While a sheet
+    // or dialog covers the screen that is wasted work and makes the sheet
+    // stutter, so the blobs rest until their screen is on top again.
+    final covered = !(ModalRoute.of(context)?.isCurrent ?? true);
+    if (reduceMotion || covered) {
       _drift.stop();
     } else if (!_drift.isAnimating) {
       _drift.repeat();
