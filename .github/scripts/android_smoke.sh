@@ -14,12 +14,13 @@ annotate() {
   echo "::${level} title=${title}::${text}"
 }
 
-adb install -r build/app/outputs/flutter-apk/app-release.apk 2>&1 | tee smoke/install.txt
-adb logcat -c
-adb shell am start -W -n com.kleinepause.app/com.kleinepause.kleine_pause.MainActivity
+# Every adb call is time-boxed so a stuck emulator cannot eat the job's minutes.
+timeout 180 adb install -r build/app/outputs/flutter-apk/app-release.apk 2>&1 | tee smoke/install.txt
+timeout 20 adb logcat -c
+timeout 30 adb shell am start -n com.kleinepause.app/com.kleinepause.kleine_pause.MainActivity
 sleep 25
-adb exec-out screencap -p > smoke/start.png
-adb logcat -d > smoke/logcat.txt
+timeout 30 adb logcat -d > smoke/logcat.txt
+timeout 30 adb exec-out screencap -p > smoke/start.png
 
 relevant=$(grep -E "KleinePause|flutter|FATAL|AndroidRuntime|Impeller|kleinepause|LiquidGlass" smoke/logcat.txt | cut -c1-300 | tail -70)
 echo "$relevant"
