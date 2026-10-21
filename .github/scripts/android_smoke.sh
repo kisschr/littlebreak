@@ -17,18 +17,21 @@ annotate() {
 # Every adb call is time-boxed so a stuck emulator cannot eat the job's minutes.
 timeout 180 adb install -r build/app/outputs/flutter-apk/app-release.apk 2>&1 | tee smoke/install.txt
 timeout 20 adb logcat -c
+# Stream the log while the app starts, so it survives an emulator that dies.
+adb logcat > smoke/logcat.txt 2>&1 &
+logcat_pid=$!
 timeout 30 adb shell am start -n com.kleinepause.app/com.kleinepause.kleine_pause.MainActivity 2>&1 | tee smoke/am_start.txt
 sleep 25
-timeout 60 adb logcat -d > smoke/logcat.txt
 timeout 30 adb exec-out screencap -p > smoke/start.png
 pid=$(timeout 10 adb shell pidof com.kleinepause.app | tr -d '\r')
+kill $logcat_pid 2>/dev/null
 
 annotate notice "device" "install: $(tail -3 smoke/install.txt)
 am start: $(cat smoke/am_start.txt)
 pid: ${pid:-none}
 logcat lines: $(wc -l < smoke/logcat.txt)"
 
-relevant=$(grep -E "KleinePause|flutter|FATAL|AndroidRuntime|Impeller|kleinepause|LiquidGlass" smoke/logcat.txt | cut -c1-300 | tail -70)
+relevant=$(grep -E "KleinePause|flutter|FATAL|AndroidRuntime|Impeller|kleinepause|LiquidGlass|Fatal signal|libc  |DEBUG   " smoke/logcat.txt | cut -c1-300 | tail -70)
 echo "$relevant"
 annotate notice "logcat" "$relevant"
 
