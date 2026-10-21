@@ -1,0 +1,1094 @@
+{
+  "@@locale": "de",
+  "appTitle": "Kleine Pause",
+  "tabToday": "Heute",
+  "tabCalendar": "Kalender",
+  "tabGallery": "Galerie",
+  "tabProfile": "Profil",
+  "tabStickers": "Sticker",
+  "close": "Schließen",
+  "ok": "OK",
+  "cancel": "Abbrechen",
+  "save": "Speichern",
+  "delete": "Löschen",
+  "done": "Fertig",
+  "off": "Aus",
+  "played": "gespielt",
+  "pickerOverline": "Kleine Pause · 366 Spiele",
+  "pickerTitle": "Wer spielt heute?",
+  "pickerWelcome": "Willkommen bei Kleine Pause",
+  "pickerBody": "Jedes Profil hat seinen eigenen Kalender, seine Serie und seine Galerie.",
+  "newProfile": "Neues Profil",
+  "audienceAdults": "Erwachsene",
+  "audienceAdultsBody": "Alle Spiele, mit Zeit und Bestenwerten",
+  "audienceKids": "Kinder",
+  "audienceKidsBody": "Ohne Zeitdruck, mit Vorlesen und Elternsperre",
+  "createProfileTitle": "Wie heißt du?",
+  "profileNameHint": "Name",
+  "createProfile": "Profil anlegen",
+  "createAdultNote": "Du startest auf Standard und kannst jeden Tag die Stufe wählen.",
+  "createKidNote": "Kinderprofile spielen ohne Uhr und Werbung. Käufe und Einstellungen sind hinter einer Elternsperre.",
+  "streakDays": "{count, plural, =1{1 Tag} other{{count} Tage}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakSeries": "{count, plural, =1{1 Tag Serie} other{{count} Tage Serie}}",
+  "@streakSeries": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakExplain": "So viele Tage hintereinander hast du gespielt. Ein verpasster Tag pro Woche wird verziehen.",
+  "profileOf": "Profil {name}",
+  "@profileOf": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dayNumber": "Tag {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "aboutMinutes": "ca. {minutes} Min",
+  "@aboutMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "threeLevels": "3 Stufen",
+  "levelsSolved": "{count} von 3 Stufen",
+  "@levelsSolved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lastLevel": "Zuletzt: {level}",
+  "@lastLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "openDoor": "Türchen öffnen",
+  "continuePlaying": "Weiterspielen",
+  "playAgain": "Nochmal spielen",
+  "thisWeek": "Diese Woche",
+  "weekProgress": "{count} von 7",
+  "@weekProgress": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tomorrowTeaser": "Morgen: {category}",
+  "@tomorrowTeaser": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "tomorrowWithPremium": "Mit Premium schon heute spielen",
+  "tomorrowPlayNow": "Jetzt schon vorspielen",
+  "weekdayMo": "Mo",
+  "weekdayTu": "Di",
+  "weekdayWe": "Mi",
+  "weekdayTh": "Do",
+  "weekdayFr": "Fr",
+  "weekdaySa": "Sa",
+  "weekdaySu": "So",
+  "levelEasy": "Einfach",
+  "levelStandard": "Standard",
+  "levelAdvanced": "Fortgeschritten",
+  "levelQuestion": "Wie knifflig?",
+  "levelGroup": "Stufe",
+  "goldHint": "Alle drei Stufen geschafft: Der Tag wird im Kalender golden.",
+  "startLevel": "{level} starten",
+  "@startLevel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "starsOf": "{count} von 3 Sternen",
+  "@starsOf": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "levelChipLabel": "Stufe {level}, tippen zum Wechseln",
+  "@levelChipLabel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "leaveGame": "Spiel verlassen",
+  "hint": "Tipp",
+  "pause": "Pause",
+  "pausedTitle": "Pause",
+  "pausedBody": "Die Zeit steht still, bis du weiterspielst.",
+  "resume": "Weiterspielen",
+  "leaveTitle": "Spiel verlassen?",
+  "leaveBody": "Dein Fortschritt in dieser Stufe geht verloren.",
+  "keepPlaying": "Weiterspielen",
+  "leave": "Verlassen",
+  "howToTitle": "So geht’s",
+  "letsGo": "Los geht’s",
+  "readAloud": "Vorlesen",
+  "resultGreat": "Großartig!",
+  "resultDone": "Geschafft!",
+  "resultGood": "Gut gespielt!",
+  "statTime": "Zeit",
+  "statMistakes": "Fehler",
+  "statMoves": "Züge",
+  "statScore": "Punkte",
+  "statAttempts": "Versuche",
+  "statStreak": "Tage Serie",
+  "statStars": "Sterne",
+  "statStickers": "Sticker",
+  "statPlayed": "Tage gespielt",
+  "statGold": "Gold-Tage",
+  "share": "Teilen",
+  "nextLevelQuestion": "{level}?",
+  "@nextLevelQuestion": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "shareText": "Kleine Pause · {day}\n{game} {stars} in {time}",
+  "@shareText": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "game": {
+        "type": "String"
+      },
+      "stars": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "adHeader": "ANZEIGE · NACH DEM SPIEL",
+  "adRemove": "Werbefrei mit Premium",
+  "adLabel": "Anzeige",
+  "houseAdTitle": "Spiel jeden Tag des Jahres",
+  "houseAdBody": "Mit Premium verpasste Tage nachholen, ohne Werbung.",
+  "tomorrowWaits": "Morgen wartet: {what}",
+  "@tomorrowWaits": {
+    "placeholders": {
+      "what": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderAt": "Erinnerung um {time} Uhr",
+  "@reminderAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderOff": "Erinnerung einschalten",
+  "reminderSettingTitle": "Erinnerung",
+  "reminderExplain": "Jeden Tag zur gleichen Zeit an deine kleine Pause erinnern.",
+  "reminderDaily": "Täglich erinnern",
+  "reminderTime": "Uhrzeit",
+  "reminderTitle": "Zeit für eine kleine Pause",
+  "reminderBody": "Dein Spiel des Tages wartet schon.",
+  "reminderDeniedTitle": "Mitteilungen sind aus",
+  "reminderDeniedBody": "Erlaube Mitteilungen für Kleine Pause in den Einstellungen deines Geräts.",
+  "viewMonth": "Monat",
+  "viewYear": "Jahr",
+  "previousMonth": "Vormonat",
+  "nextMonth": "Nächster Monat",
+  "monthPlayed": "{played} von {available} gespielt",
+  "@monthPlayed": {
+    "placeholders": {
+      "played": {
+        "type": "int"
+      },
+      "available": {
+        "type": "int"
+      }
+    }
+  },
+  "dayToday": "heute",
+  "dayGold": "gespielt, Gold",
+  "dayCatchUp": "nachholen",
+  "dayMissedPremium": "verpasst, nur mit Premium",
+  "dayPlayAhead": "vorspielen",
+  "dayLocked": "gesperrt",
+  "legend": "Legende",
+  "legendPlayed": "Gespielt",
+  "legendGold": "Gold: alle 3 Stufen",
+  "legendCatchUp": "Nachholen",
+  "legendAhead": "Vorspielen",
+  "missedDays": "{count, plural, =1{1 Tag verpasst} other{{count} Tage verpasst}}",
+  "@missedDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "missedBody": "Mit Premium nachholen und 3 Tage vorspielen",
+  "yearSummary": "{played} Tage gespielt · {gold} Gold-Tage",
+  "@yearSummary": {
+    "placeholders": {
+      "played": {
+        "type": "int"
+      },
+      "gold": {
+        "type": "int"
+      }
+    }
+  },
+  "galleryCount": "{count, plural, =0{Noch keine Bilder} =1{1 Bild} other{{count} Bilder}}",
+  "@galleryCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "galleryEmptyTitle": "Deine Galerie",
+  "galleryEmptyBody": "Hier landen deine ausgemalten Bilder und Pixel-Kunstwerke.",
+  "settings": "Einstellungen",
+  "language": "Sprache",
+  "languageSystem": "Wie das Gerät",
+  "languageGerman": "Deutsch",
+  "languageEnglish": "English",
+  "languageMore": "Weitere Sprachen folgen.",
+  "haptics": "Vibration",
+  "premiumSection": "Premium",
+  "premiumActiveShort": "Aktiv",
+  "premiumUnlock": "Freischalten",
+  "premiumDebug": "Premium testen (nur Debug)",
+  "profileSection": "Profil",
+  "switchProfile": "Profil wechseln",
+  "renameProfile": "Profil umbenennen",
+  "deleteProfile": "Profil löschen",
+  "deleteProfileTitle": "{name} löschen?",
+  "@deleteProfileTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteProfileBody": "Kalender, Serie und Galerie dieses Profils werden gelöscht.",
+  "parentsArea": "Elternbereich",
+  "aboutLine": "Kleine Pause · QuizQuiz-Fragen von Zitat des Tages (zitatdestages.net)",
+  "premiumTitle": "Kleine Pause Premium",
+  "premiumSubtitle": "Dein ganzes Jahr, in deinem Tempo.",
+  "perkNoAds": "Keine Werbung",
+  "perkNoAdsBody": "Auch nicht vor oder nach dem Spiel",
+  "perkPast": "Jeden vergangenen Tag nachholen",
+  "perkPastBody": "Seit dem 1. Januar, so weit zurück du willst",
+  "perkAhead": "3 Tage vorspielen",
+  "perkAheadBody": "Für Urlaub, Wochenende oder Neugier",
+  "perkProfiles": "Für alle Profile",
+  "perkProfilesBody": "Erwachsene und Kinder auf diesem Gerät",
+  "planYearly": "Jährlich",
+  "planYearlyNote": "Beliebteste Wahl",
+  "planOnce": "Einmalig",
+  "planOnceNote": "Für dieses Jahr",
+  "pricePerYear": "{price} / Jahr",
+  "@pricePerYear": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "premiumStart": "Premium starten",
+  "premiumActive": "Premium ist aktiv. Danke!",
+  "restorePurchases": "Käufe wiederherstellen",
+  "terms": "Bedingungen",
+  "termsBody": "Premium gilt für alle Profile auf diesem Gerät. Das Jahresabo verlängert sich automatisch und ist jederzeit in den Store-Einstellungen kündbar. Der Einmalkauf gilt bis zum 31. Dezember dieses Jahres.",
+  "purchaseUnavailableTitle": "Gerade nicht möglich",
+  "purchaseUnavailableBody": "Der Store ist in dieser Version noch nicht angebunden.",
+  "restoreNoneTitle": "Nichts gefunden",
+  "restoreNoneBody": "Für dieses Konto gibt es keinen Premium-Kauf.",
+  "kidsHello": "Hallo {name}!",
+  "@kidsHello": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "parents": "Eltern",
+  "stickersCollected": "{count, plural, =1{1 Sticker gesammelt} other{{count} Sticker gesammelt}}",
+  "@stickersCollected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stickersToPage": "Noch {count} bis zur {month}-Seite",
+  "@stickersToPage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "stickerPageDone": "{month}-Seite geschafft!",
+  "@stickerPageDone": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "stickerFor": "Sticker vom {date}",
+  "@stickerFor": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "gateTitle": "Frag deine Eltern",
+  "gateBody": "Dieser Bereich ist für Erwachsene.",
+  "gateQuestion": "Wie viel ist {a} × {b}?",
+  "@gateQuestion": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "b": {
+        "type": "int"
+      }
+    }
+  },
+  "gateWrong": "Nicht ganz. Neue Aufgabe:",
+  "categoryCreative": "Kreativ",
+  "categoryWord": "Wort & Sprache",
+  "categoryQuiz": "Quiz & Wissen",
+  "categoryLogic": "Logik",
+  "categoryArcade": "Geschick & Arcade",
+  "categoryMemory": "Gedächtnis",
+  "categoryNumbers": "Zahlen",
+  "categoryMindful": "Entspannung",
+  "theme1": "Neuanfang & Winter",
+  "theme2": "Liebe & Fasching",
+  "theme3": "Erwachen",
+  "theme4": "Ostern & Garten",
+  "theme5": "Blüte & Natur",
+  "theme6": "Sport & Bewegung",
+  "theme7": "Ferien & Meer",
+  "theme8": "Reisen & Welt",
+  "theme9": "Schule & Wissen",
+  "theme10": "Herbst & Grusel",
+  "theme11": "Gemütlichkeit",
+  "theme12": "Advent & Jahresrückblick",
+  "edition1": "Schneeflocken-Edition",
+  "edition2": "Herzklopfen-Edition",
+  "edition3": "Frühlingserwachen-Edition",
+  "edition4": "Osterhasen-Edition",
+  "edition5": "Blütenzauber-Edition",
+  "edition6": "Sommeranfang-Edition",
+  "edition7": "Strandkorb-Edition",
+  "edition8": "Fernweh-Edition",
+  "edition9": "Erntezeit-Edition",
+  "edition10": "Herbstlaub-Edition",
+  "edition11": "Laternen-Edition",
+  "edition12": "Adventszauber-Edition",
+  "specialNewYear": "Neujahr",
+  "specialValentine": "Valentinstag",
+  "specialLeapDay": "Schalttag-Bonus",
+  "specialPiDay": "Pi-Tag",
+  "specialSpring": "Frühlingsanfang",
+  "specialAprilFools": "Aprilscherz",
+  "specialEarthDay": "Tag der Erde",
+  "specialBookDay": "Welttag des Buches",
+  "specialMayDay": "Maifeiertag",
+  "specialSummer": "Sommeranfang",
+  "specialUnityDay": "Tag der Deutschen Einheit",
+  "specialHalloween": "Halloween",
+  "specialStMartin": "Martinstag",
+  "specialChristmasEve": "Heiligabend",
+  "specialChristmas": "Weihnachten",
+  "specialBoxingDay": "Zweiter Weihnachtstag",
+  "specialNewYearsEve": "Silvester",
+  "specialCarnival": "Rosenmontag",
+  "specialEaster": "Ostern",
+  "specialMothersDay": "Muttertag",
+  "specialAdvent": "Adventskalender",
+  "motifPumpkin": "Kürbis",
+  "motifHeart": "Herz",
+  "motifFlower": "Blume",
+  "motifStar": "Stern",
+  "motifTree": "Tannenbaum",
+  "motifLantern": "Laterne",
+  "motifMask": "Faschingsmaske",
+  "motifEgg": "Osterei",
+  "motifLeaf": "Herbstblatt",
+  "motifMushroom": "Fliegenpilz",
+  "motifHouse": "Häuschen",
+  "motifFish": "Fisch",
+  "motifSnowman": "Schneemann",
+  "motifSun": "Sonne",
+  "motifButterfly": "Schmetterling",
+  "motifHedgehog": "Igel im Herbstlaub",
+  "motifIcecream": "Eistüte",
+  "motifSailboat": "Segelboot",
+  "motifUmbrella": "Regenschirm",
+  "gameColoring": "Ausmalen",
+  "gamePixelArt": "Pixel-Kunst",
+  "gameWordGuess": "Wortraten",
+  "gameAnagram": "Buchstabensalat",
+  "gameWordSearch": "Wortsuche",
+  "gameQuoteQuiz": "QuizQuiz",
+  "gameTrueFalse": "Wahr oder falsch",
+  "gameSudoku": "Sudoku",
+  "gameNonogram": "Nonogramm",
+  "gameLightsOut": "Lichter aus",
+  "gameHanoi": "Turm von Hanoi",
+  "gameMaze": "Labyrinth",
+  "gameStacking": "Turmbau",
+  "gameMinesweeper": "Minensuche",
+  "game2048": "2048",
+  "gameNumberPyramid": "Zahlenpyramide",
+  "gameMemory": "Memo",
+  "gameSimon": "Farbenfolge",
+  "gameSlidePuzzle": "Schiebepuzzle",
+  "gameBreathing": "Atempause",
+  "howToColoring": "Wähle eine Farbe und tippe auf eine Fläche, um sie auszumalen. Auf „Fortgeschritten“ malst du nach Zahlen: Jede Zahl gehört zu einer Farbe. Der Tipp malt eine Fläche für dich aus.",
+  "howToPixelArt": "Jede Zahl steht für eine Farbe. Wähle unten die Farbe und tippe oder wische über die passenden Kästchen, bis das Bild fertig ist.",
+  "howToWordGuess": "Errate das Wort in sechs Versuchen. Grün: Buchstabe an der richtigen Stelle. Gelb: kommt vor, aber woanders. Grau: kommt nicht vor.",
+  "howToAnagram": "Die Buchstaben sind durcheinander. Tippe sie in der richtigen Reihenfolge an, um das Wort zu bilden. Tippe auf ein gelegtes Feld, um ab dort zurückzunehmen.",
+  "howToWordSearch": "Finde alle Wörter im Gitter. Ziehe mit dem Finger vom ersten bis zum letzten Buchstaben – waagerecht, senkrecht oder diagonal.",
+  "howToQuoteQuiz": "Lies das Zitat und tippe auf die Person, von der es stammt. Die Fragen kommen von der App „Zitat des Tages“.",
+  "howToTrueFalse": "Stimmt die Aussage oder nicht? Tippe auf „Wahr“ oder „Falsch“. Auf „Fortgeschritten“ hast du pro Aussage zehn Sekunden.",
+  "howToSudoku": "Fülle das Gitter so, dass jede Zahl in jeder Zeile, jeder Spalte und jedem Block genau einmal vorkommt. Tippe ein Feld an und dann eine Zahl. Mit „Notizen“ merkst du dir Kandidaten.",
+  "howToNonogram": "Die Zahlen am Rand verraten, wie viele Felder hintereinander gefüllt sind. Fülle die richtigen Felder, und ein Bild entsteht. Mit dem Kreuz markierst du sichere Lücken.",
+  "howToLightsOut": "Ein Tipp schaltet ein Licht und seine Nachbarn um. Schalte alle Lichter aus.",
+  "howToHanoi": "Bringe den ganzen Turm auf den rechten Stab. Tippe einen Stab an, um die oberste Scheibe zu nehmen, und dann das Ziel. Nie eine größere auf eine kleinere Scheibe legen.",
+  "howToMaze": "Führe den Punkt zum Ziel. Wische in eine Richtung oder nutze die Pfeile.",
+  "howToStacking": "Der Block schwingt hin und her. Tippe, um ihn fallen zu lassen. Was übersteht, fällt ab. Baue den Turm bis zur Zielhöhe.",
+  "howToMinesweeper": "Decke alle Felder ohne Mine auf. Die Zahl sagt, wie viele Minen um ein Feld liegen. Mit der Flagge markierst du Verdachtsfälle. Der erste Tipp ist immer sicher.",
+  "howTo2048": "Wische, um alle Kacheln zu schieben. Gleiche Zahlen verschmelzen. Erreiche die Zielzahl.",
+  "howToNumberPyramid": "Jeder Stein ist die Summe der beiden Steine darunter. Fülle die leeren Steine und prüfe dann.",
+  "howToMemory": "Decke immer zwei Karten auf. Finde alle Paare mit möglichst wenigen Fehlversuchen.",
+  "howToSimon": "Schau dir die Farbenfolge an und tippe sie danach nach. Jede Runde kommt eine Farbe dazu.",
+  "howToSlidePuzzle": "Schiebe die Kacheln in die Lücke, bis das Bild wieder stimmt. Tippe eine Kachel neben der Lücke an.",
+  "howToBreathing": "Atme mit dem Kreis: einatmen, wenn er wächst, kurz halten, ausatmen, wenn er schrumpft. Es gibt nichts zu gewinnen, nur Ruhe.",
+  "kidColoring": "Such dir eine Farbe aus und tippe auf eine Fläche. Mal das Bild ganz bunt an!",
+  "kidPixelArt": "Jede Zahl hat eine Farbe. Mal alle Kästchen mit der richtigen Farbe aus!",
+  "kidAnagram": "Die Buchstaben sind durcheinander. Tippe sie richtig nacheinander an!",
+  "kidWordSearch": "Finde die Wörter! Fahre mit dem Finger über die Buchstaben.",
+  "kidTrueFalse": "Stimmt das? Tippe auf Wahr oder Falsch.",
+  "kidSudoku": "Jede Zahl darf in jeder Reihe nur einmal vorkommen. Probier es aus!",
+  "kidLightsOut": "Tippe auf die Lichter, bis alle aus sind!",
+  "kidHanoi": "Bau den Turm auf dem rechten Stab wieder auf. Große Scheiben immer unten!",
+  "kidMaze": "Hilf dem Punkt durch das Labyrinth bis zum Ziel!",
+  "kidStacking": "Tippe genau im richtigen Moment und bau einen hohen Turm!",
+  "kidNumberPyramid": "Zwei Steine zusammen ergeben den Stein darüber. Rechne mit!",
+  "kidMemory": "Dreh zwei Karten um und finde die Paare!",
+  "kidSimon": "Schau gut zu und tippe die Farben in der gleichen Reihenfolge!",
+  "kidSlidePuzzle": "Schiebe die Teile, bis das Bild wieder stimmt!",
+  "kidBreathing": "Atme mit dem Kreis ein und aus. Ganz ruhig.",
+  "detailGrid": "{size} Felder · ca. {minutes} Min",
+  "@detailGrid": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailPairs": "{count} Paare · ca. {minutes} Min",
+  "@detailPairs": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailDiscs": "{count} Scheiben · ca. {minutes} Min",
+  "@detailDiscs": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailRows": "{count} Reihen · ca. {minutes} Min",
+  "@detailRows": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailTarget": "Ziel {target} · ca. {minutes} Min",
+  "@detailTarget": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailMines": "{size} Felder, {mines} Minen · ca. {minutes} Min",
+  "@detailMines": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      },
+      "mines": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailSequence": "Folge von {count} · ca. {minutes} Min",
+  "@detailSequence": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailBlocks": "{count} Blöcke hoch · ca. {minutes} Min",
+  "@detailBlocks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailBreaths": "{count} Atemzüge · ca. {minutes} Min",
+  "@detailBreaths": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailLetters": "{count} Buchstaben · ca. {minutes} Min",
+  "@detailLetters": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailAnagram": "{count} Wörter mit {length} Buchstaben · ca. {minutes} Min",
+  "@detailAnagram": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "length": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailWords": "{count} Wörter · ca. {minutes} Min",
+  "@detailWords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailQuiz": "{questions} Fragen, {answers} Antworten · ca. {minutes} Min",
+  "@detailQuiz": {
+    "placeholders": {
+      "questions": {
+        "type": "int"
+      },
+      "answers": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailStatements": "{count} Aussagen · ca. {minutes} Min",
+  "@detailStatements": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailColoring": "Freies Ausmalen, {colors} Farben · ca. {minutes} Min",
+  "@detailColoring": {
+    "placeholders": {
+      "colors": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "detailPaintByNumbers": "Malen nach Zahlen · ca. {minutes} Min",
+  "@detailPaintByNumbers": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "sudokuGridLabel": "Sudoku {size} mal {size}",
+  "@sudokuGridLabel": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "cellLabel": "Zeile {row}, Spalte {column}: {value}",
+  "@cellLabel": {
+    "placeholders": {
+      "row": {
+        "type": "int"
+      },
+      "column": {
+        "type": "int"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "cellEmpty": "leer",
+  "cellFilled": "gefüllt",
+  "cellCrossed": "ausgekreuzt",
+  "cellHidden": "verdeckt",
+  "numberLabel": "Zahl {number}",
+  "@numberLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "tileLabel": "Kachel {number}",
+  "@tileLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "brickLabel": "Reihe {row}, Stein {brick}: {value}",
+  "@brickLabel": {
+    "placeholders": {
+      "row": {
+        "type": "int"
+      },
+      "brick": {
+        "type": "int"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "mistakesCount": "Fehler {count}",
+  "@mistakesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hintsCount": "Tipps {used} von {max}",
+  "@hintsCount": {
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "movesCount": "Züge {count}",
+  "@movesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreCount": "Punkte {count}",
+  "@scoreCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "target": "Ziel {target}",
+  "@target": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "roundOf": "Runde {current} von {total}",
+  "@roundOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "heightOf": "Höhe {current} von {total}",
+  "@heightOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "breathOf": "Atemzug {current} von {total}",
+  "@breathOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attemptOf": "Versuch {current} von {total}",
+  "@attemptOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "attemptCount": "Versuch {count}",
+  "@attemptCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "wordOf": "Wort {current} von {total}",
+  "@wordOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "wordsFound": "{current} von {total} gefunden",
+  "@wordsFound": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "questionOf": "Frage {current} von {total}",
+  "@questionOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pairsFound": "{current} von {total} Paaren",
+  "@pairsFound": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "lightsLeft": "{count, plural, =1{1 Licht an} other{{count} Lichter an}}",
+  "@lightsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minesLeft": "{count, plural, =1{1 Mine übrig} other{{count} Minen übrig}}",
+  "@minesLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hanoiOptimal": "Bestmöglich: {count} Züge",
+  "@hanoiOptimal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "areasColored": "{current} von {total} Flächen",
+  "@areasColored": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pixelsPainted": "{current} von {total} Kästchen",
+  "@pixelsPainted": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "secondsLeft": "{count} s",
+  "@secondsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "colorNumber": "Farbe {number}",
+  "@colorNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "coloringLabel": "Ausmalbild",
+  "pixelLabel": "Pixelbild {size} mal {size}",
+  "@pixelLabel": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "erase": "Löschen",
+  "notes": "Notizen",
+  "undo": "Rückgängig",
+  "check": "Prüfen",
+  "start": "Start",
+  "shuffle": "Mischen",
+  "clear": "Leeren",
+  "tryAgain": "Nochmal",
+  "next": "Weiter",
+  "finish": "Fertig",
+  "reveal": "Aufdecken",
+  "flag": "Flagge",
+  "memoryCardOpen": "Karte {number}, offen",
+  "@memoryCardOpen": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "memoryCardClosed": "Karte {number}, verdeckt",
+  "@memoryCardClosed": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lightLabel": "Licht Zeile {row}, Spalte {column}: {state}",
+  "@lightLabel": {
+    "placeholders": {
+      "row": {
+        "type": "int"
+      },
+      "column": {
+        "type": "int"
+      },
+      "state": {
+        "type": "String"
+      }
+    }
+  },
+  "lightOn": "an",
+  "lightOff": "aus",
+  "lightsGoal": "Schalte alle Lichter aus.",
+  "slideGoal": "Schiebe die Kacheln in die richtige Reihenfolge.",
+  "hanoiPeg": "Stab {number}, {count} Scheiben",
+  "@hanoiPeg": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hanoiGoal": "Bringe alle Scheiben auf den rechten Stab.",
+  "pyramidGoal": "Jeder Stein ist die Summe der zwei darunter.",
+  "mazeLabel": "Labyrinth",
+  "directionUp": "Hoch",
+  "directionDown": "Runter",
+  "directionLeft": "Links",
+  "directionRight": "Rechts",
+  "game2048Stuck": "Keine Züge mehr.",
+  "swipeHint": "Wische, um die Kacheln zu schieben.",
+  "nonogramFill": "Füllen",
+  "nonogramCross": "Kreuz",
+  "mine": "Mine",
+  "mineBoom": "Bumm! Neuer Versuch mit neuem Feld.",
+  "simonPad": "Farbe {number}",
+  "@simonPad": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "simonWatch": "Gut zuschauen …",
+  "simonYourTurn": "Du bist dran!",
+  "stackingHint": "Tippe, um den Block fallen zu lassen.",
+  "breatheIn": "Einatmen",
+  "breatheHold": "Halten",
+  "breatheOut": "Ausatmen",
+  "breatheReady": "Bereit?",
+  "wordWas": "Gesucht war: {word}",
+  "@wordWas": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "wordSearchLabel": "Buchstabengitter {size} mal {size}",
+  "@wordSearchLabel": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "whoSaidIt": "Wer hat’s gesagt?",
+  "answerRight": "Richtig!",
+  "answerWrong": "Leider nein: {answer}",
+  "@answerWrong": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "answerWrongPlain": "Leider nein.",
+  "quoteSource": "Fragen: Zitat des Tages · zitatdestages.net",
+  "quizUnavailable": "Gerade keine Fragen da. Versuch es später nochmal.",
+  "trueOrFalse": "Wahr oder falsch?",
+  "answerTrue": "Wahr",
+  "answerFalse": "Falsch",
+  "timeUp": "Zeit um!"
+}

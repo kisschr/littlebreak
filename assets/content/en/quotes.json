@@ -1,0 +1,233 @@
+[
+ {
+  "uuid": "130e4e21-597e-57f4-8590-6077eed1ba0d",
+  "quote": "To be, or not to be: that is the question.",
+  "answer1": "William Shakespeare",
+  "answer2": "Christopher Marlowe",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "c507603b-278e-5d84-9b16-392dd776a145",
+  "quote": "I think, therefore I am.",
+  "answer1": "Immanuel Kant",
+  "answer2": "René Descartes",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "899e075c-ffee-5ddf-a7b7-afe7e424f393",
+  "quote": "The only thing we have to fear is fear itself.",
+  "answer1": "Franklin D. Roosevelt",
+  "answer2": "Winston Churchill",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "48145192-3456-5bb0-85e0-2af2a4c045bd",
+  "quote": "Imagination is more important than knowledge.",
+  "answer1": "Isaac Newton",
+  "answer2": "Albert Einstein",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "7b81983b-a570-519f-b23f-84b3f0cc3c74",
+  "quote": "That’s one small step for man, one giant leap for mankind.",
+  "answer1": "Neil Armstrong",
+  "answer2": "Buzz Aldrin",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "55a64e01-2fde-5c17-bd55-3aa8d8937330",
+  "quote": "I have a dream.",
+  "answer1": "Malcolm X",
+  "answer2": "Martin Luther King Jr.",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "1908e9d6-1167-5519-a45e-1c929b84f372",
+  "quote": "Ask not what your country can do for you – ask what you can do for your country.",
+  "answer1": "John F. Kennedy",
+  "answer2": "Abraham Lincoln",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "5635e000-5d79-5fa8-94c8-f2681f44b4f7",
+  "quote": "Life is what happens to you while you’re busy making other plans.",
+  "answer1": "Paul McCartney",
+  "answer2": "John Lennon",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "3c2af3ef-5d1b-5bce-a5fe-2e3a37c86d9d",
+  "quote": "The unexamined life is not worth living.",
+  "answer1": "Socrates",
+  "answer2": "Aristotle",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "18eb6c0c-f4b6-5b25-8b12-4b2f2b3c62ad",
+  "quote": "Knowledge is power.",
+  "answer1": "Isaac Newton",
+  "answer2": "Francis Bacon",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "66392e79-afd7-5c38-8bde-7665eb60bebd",
+  "quote": "Hope is the thing with feathers.",
+  "answer1": "Emily Dickinson",
+  "answer2": "Sylvia Plath",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "a3ed4ad8-75cd-572f-a0e9-b1272af9cfa6",
+  "quote": "Not all those who wander are lost.",
+  "answer1": "C. S. Lewis",
+  "answer2": "J. R. R. Tolkien",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "aa222695-cf09-5010-9fee-5bbfeea5d6f6",
+  "quote": "We shall fight on the beaches.",
+  "answer1": "Winston Churchill",
+  "answer2": "Franklin D. Roosevelt",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "b0628d40-54c5-59b4-b51a-0a8cff3ed7d4",
+  "quote": "Float like a butterfly, sting like a bee.",
+  "answer1": "Mike Tyson",
+  "answer2": "Muhammad Ali",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "4de189dc-e94d-54de-8c21-a1b9a9c9227f",
+  "quote": "The journey of a thousand miles begins with one step.",
+  "answer1": "Lao Tzu",
+  "answer2": "Confucius",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "620a3549-48db-5832-be34-b6e84cac3f3c",
+  "quote": "All the world’s a stage.",
+  "answer1": "Oscar Wilde",
+  "answer2": "William Shakespeare",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "2172896f-2e78-55e4-bd2b-d1578a0f15c0",
+  "quote": "It was the best of times, it was the worst of times.",
+  "answer1": "Charles Dickens",
+  "answer2": "Jane Austen",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "fa9106c3-584a-5cfc-86ec-23d6613e950d",
+  "quote": "I came, I saw, I conquered.",
+  "answer1": "Alexander the Great",
+  "answer2": "Julius Caesar",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "6c7a253f-0451-5265-b351-a1d001dff8f5",
+  "quote": "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+  "answer1": "Albert Einstein",
+  "answer2": "Marie Curie",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "987dace1-a58a-5448-a40d-2b9c445b41b7",
+  "quote": "The pen is mightier than the sword.",
+  "answer1": "Charles Dickens",
+  "answer2": "Edward Bulwer-Lytton",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "0d5f609d-d406-5d3f-b30a-dcae1d42f4ec",
+  "quote": "Two roads diverged in a wood, and I – I took the one less traveled by.",
+  "answer1": "Robert Frost",
+  "answer2": "Walt Whitman",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "24010be7-2aab-5f4a-b5e9-c8a0005636bc",
+  "quote": "Hell is other people.",
+  "answer1": "Albert Camus",
+  "answer2": "Jean-Paul Sartre",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "32ed7413-f510-5aba-9c3e-b69a4c122721",
+  "quote": "We are such stuff as dreams are made on.",
+  "answer1": "William Shakespeare",
+  "answer2": "John Milton",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "65f70b17-1c08-5109-8c26-9f0f59517ff5",
+  "quote": "Tomorrow is another day.",
+  "answer1": "Harper Lee",
+  "answer2": "Margaret Mitchell",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "5414e499-0d22-5ad5-949a-08a795863503",
+  "quote": "Without music, life would be a mistake.",
+  "answer1": "Friedrich Nietzsche",
+  "answer2": "Ludwig van Beethoven",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "7d0f566e-5ed6-570b-b585-5fde2f8f342e",
+  "quote": "I am not afraid of storms, for I am learning how to sail my ship.",
+  "answer1": "Emily Brontë",
+  "answer2": "Louisa May Alcott",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "d546ec79-e9f0-5f8a-8ba4-61306c731f37",
+  "quote": "The limits of my language mean the limits of my world.",
+  "answer1": "Ludwig Wittgenstein",
+  "answer2": "Friedrich Nietzsche",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "2937d904-900a-5ee6-943c-c53b597d2c9b",
+  "quote": "If I have seen further it is by standing on the shoulders of giants.",
+  "answer1": "Galileo Galilei",
+  "answer2": "Isaac Newton",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "b7adb5ba-61ac-5c75-99ad-72cb12f4b569",
+  "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+  "answer1": "Thomas Edison",
+  "answer2": "Nikola Tesla",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "c9c4cb9e-77d4-59c8-8142-336db6cbd2d8",
+  "quote": "Nothing in life is to be feared, it is only to be understood.",
+  "answer1": "Rosalind Franklin",
+  "answer2": "Marie Curie",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "94b7558b-0495-55d3-8d14-58adc2eaae71",
+  "quote": "The best way to predict the future is to invent it.",
+  "answer1": "Alan Kay",
+  "answer2": "Steve Jobs",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "e8192533-7c8f-569b-b6c9-85e28dff7f7c",
+  "quote": "Well done is better than well said.",
+  "answer1": "Mark Twain",
+  "answer2": "Benjamin Franklin",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "8b179f21-5d6c-5caf-a020-0bc3b3ad6653",
+  "quote": "Brevity is the soul of wit.",
+  "answer1": "William Shakespeare",
+  "answer2": "Oscar Wilde",
+  "correct_answer": "1"
+ }
+]

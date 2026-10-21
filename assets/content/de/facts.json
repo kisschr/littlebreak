@@ -1,0 +1,314 @@
+[
+ {
+  "s": "Ein Oktopus hat drei Herzen.",
+  "a": true
+ },
+ {
+  "s": "Die Sonne ist ein Stern.",
+  "a": true
+ },
+ {
+  "s": "Spinnen gehören zu den Insekten.",
+  "a": false
+ },
+ {
+  "s": "Der Mount Everest ist der höchste Berg der Erde über dem Meeresspiegel.",
+  "a": true
+ },
+ {
+  "s": "Wale sind Fische.",
+  "a": false
+ },
+ {
+  "s": "Tomaten sind botanisch gesehen Beeren.",
+  "a": true
+ },
+ {
+  "s": "Der Mond leuchtet aus eigener Kraft.",
+  "a": false
+ },
+ {
+  "s": "Honigbienen zeigen sich mit einem Tanz, wo es Futter gibt.",
+  "a": true
+ },
+ {
+  "s": "Pinguine leben am Nordpol.",
+  "a": false
+ },
+ {
+  "s": "Wasser kocht auf Meereshöhe bei 100 Grad Celsius.",
+  "a": true
+ },
+ {
+  "s": "Die Chinesische Mauer ist vom Mond aus mit bloßem Auge zu sehen.",
+  "a": false
+ },
+ {
+  "s": "Ein Schaltjahr hat 366 Tage.",
+  "a": true
+ },
+ {
+  "s": "Fledermäuse sind Vögel.",
+  "a": false
+ },
+ {
+  "s": "Der Pazifik ist der größte Ozean der Erde.",
+  "a": true
+ },
+ {
+  "s": "Ein Blitz schlägt nie zweimal an derselben Stelle ein.",
+  "a": false
+ },
+ {
+  "s": "Kängurus kommen in Australien vor.",
+  "a": true
+ },
+ {
+  "s": "Ein Dreieck hat vier Ecken.",
+  "a": false
+ },
+ {
+  "s": "Gold ist bei Zimmertemperatur flüssig.",
+  "a": false
+ },
+ {
+  "s": "Die Erde braucht ungefähr ein Jahr, um die Sonne zu umrunden.",
+  "a": true
+ },
+ {
+  "s": "Schnecken haben Tausende winzige Zähne.",
+  "a": true
+ },
+ {
+  "s": "Bei Erdbeeren sitzen die kleinen Kerne außen auf der Frucht.",
+  "a": true
+ },
+ {
+  "s": "Berlin ist die Hauptstadt von Deutschland.",
+  "a": true
+ },
+ {
+  "s": "Wien ist die Hauptstadt der Schweiz.",
+  "a": false
+ },
+ {
+  "s": "Ein Marathon ist gut 42 Kilometer lang.",
+  "a": true
+ },
+ {
+  "s": "Delfine atmen mit Kiemen.",
+  "a": false
+ },
+ {
+  "s": "Ein erwachsener Mensch hat mit Weisheitszähnen meist 32 Zähne.",
+  "a": true
+ },
+ {
+  "s": "Schmetterlinge schmecken mit ihren Füßen.",
+  "a": true
+ },
+ {
+  "s": "Der Eiffelturm steht in Rom.",
+  "a": false
+ },
+ {
+  "s": "Die Venus ist der heißeste Planet unseres Sonnensystems.",
+  "a": true
+ },
+ {
+  "s": "Der Mars wird auch der Rote Planet genannt.",
+  "a": true
+ },
+ {
+  "s": "Haie sind Säugetiere.",
+  "a": false
+ },
+ {
+  "s": "Bambus gehört zu den Gräsern.",
+  "a": true
+ },
+ {
+  "s": "Eisbären haben unter ihrem Fell eine schwarze Haut.",
+  "a": true
+ },
+ {
+  "s": "Ein Sechseck hat sechs Seiten.",
+  "a": true
+ },
+ {
+  "s": "7 mal 8 ergibt 54.",
+  "a": false
+ },
+ {
+  "s": "Pilze sind Pflanzen.",
+  "a": false
+ },
+ {
+  "s": "Strauße stecken bei Gefahr den Kopf in den Sand.",
+  "a": false
+ },
+ {
+  "s": "Kolibris können rückwärts fliegen.",
+  "a": true
+ },
+ {
+  "s": "Die Zugspitze ist der höchste Berg Deutschlands.",
+  "a": true
+ },
+ {
+  "s": "Der Bodensee grenzt an Deutschland, Österreich und die Schweiz.",
+  "a": true
+ },
+ {
+  "s": "Ein Jahrhundert dauert 1000 Jahre.",
+  "a": false
+ },
+ {
+  "s": "Schall ist schneller als Licht.",
+  "a": false
+ },
+ {
+  "s": "Pflanzen nehmen Kohlendioxid auf und geben Sauerstoff ab.",
+  "a": true
+ },
+ {
+  "s": "Goldfische können sich nur drei Sekunden lang etwas merken.",
+  "a": false
+ },
+ {
+  "s": "Die Freiheitsstatue steht in New York.",
+  "a": true
+ },
+ {
+  "s": "Löwen leben meist in Rudeln.",
+  "a": true
+ },
+ {
+  "s": "Ein Kilometer hat 1000 Meter.",
+  "a": true
+ },
+ {
+  "s": "Diamanten bestehen aus Kohlenstoff.",
+  "a": true
+ },
+ {
+  "s": "Der Saturn hat Ringe.",
+  "a": true
+ },
+ {
+  "s": "Die Mona Lisa wurde von Vincent van Gogh gemalt.",
+  "a": false
+ },
+ {
+  "s": "Spinnen haben acht Beine.",
+  "a": true
+ },
+ {
+  "s": "Kraken haben blaues Blut.",
+  "a": true
+ },
+ {
+  "s": "Der Äquator teilt die Erde in eine Nord- und eine Südhalbkugel.",
+  "a": true
+ },
+ {
+  "s": "Eis ist schwerer als Wasser und geht deshalb unter.",
+  "a": false
+ },
+ {
+  "s": "Eine Woche hat acht Tage.",
+  "a": false
+ },
+ {
+  "s": "Giraffen haben genauso viele Halswirbel wie Menschen.",
+  "a": true
+ },
+ {
+  "s": "Igel halten Winterschlaf.",
+  "a": true
+ },
+ {
+  "s": "Frösche sind Reptilien.",
+  "a": false
+ },
+ {
+  "s": "Wolfgang Amadeus Mozart wurde in Salzburg geboren.",
+  "a": true
+ },
+ {
+  "s": "Der Tag der Deutschen Einheit wird am 3. Oktober gefeiert.",
+  "a": true
+ },
+ {
+  "s": "Ameisen können ein Vielfaches ihres eigenen Gewichts tragen.",
+  "a": true
+ },
+ {
+  "s": "Ein Regenbogen entsteht, wenn Sonnenlicht in Regentropfen gebrochen wird.",
+  "a": true
+ },
+ {
+  "s": "Kamele speichern Wasser in ihren Höckern.",
+  "a": false
+ },
+ {
+  "s": "Der längste Tag des Jahres liegt auf der Nordhalbkugel im Juni.",
+  "a": true
+ },
+ {
+  "s": "Die Erde ist der Sonne am nächsten von allen Planeten.",
+  "a": false
+ },
+ {
+  "s": "Merkur ist der kleinste Planet unseres Sonnensystems.",
+  "a": true
+ },
+ {
+  "s": "Ein Eisbär ist ein Raubtier.",
+  "a": true
+ },
+ {
+  "s": "Seesterne haben ein Gehirn.",
+  "a": false
+ },
+ {
+  "s": "Ein Fußballspiel dauert regulär zweimal 45 Minuten.",
+  "a": true
+ },
+ {
+  "s": "Die Olympischen Spiele haben fünf Ringe im Logo.",
+  "a": true
+ },
+ {
+  "s": "Die Zahl Pi ist genau 3.",
+  "a": false
+ },
+ {
+  "s": "Ein Oktopus kann seine Farbe wechseln.",
+  "a": true
+ },
+ {
+  "s": "Koalas sind Bären.",
+  "a": false
+ },
+ {
+  "s": "Die Antarktis ist eine Eiswüste am Südpol.",
+  "a": true
+ },
+ {
+  "s": "Herbstblätter werden bunt, weil das grüne Chlorophyll abgebaut wird.",
+  "a": true
+ },
+ {
+  "s": "Ein Kürbis ist eine Gemüsesorte aus der Familie der Kürbisgewächse, zu der auch Gurken gehören.",
+  "a": true
+ },
+ {
+  "s": "Licht von der Sonne braucht etwa acht Minuten bis zur Erde.",
+  "a": true
+ },
+ {
+  "s": "Der Rhein fließt durch Deutschland.",
+  "a": true
+ }
+]

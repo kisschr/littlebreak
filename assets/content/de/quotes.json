@@ -1,0 +1,226 @@
+[
+ {
+  "uuid": "6e5b8793-a16c-5c4b-af9f-f0b231636e01",
+  "quote": "Ich denke, also bin ich.",
+  "answer1": "René Descartes",
+  "answer2": "Immanuel Kant",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "a8b4590b-6a81-508c-ba45-db352870f5ae",
+  "quote": "Der Mensch ist nur da ganz Mensch, wo er spielt.",
+  "answer1": "Johann Wolfgang von Goethe",
+  "answer2": "Friedrich Schiller",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "48c866ed-1442-5ff0-8a7b-2dd84044ec3e",
+  "quote": "Es gibt nichts Gutes, außer man tut es.",
+  "answer1": "Erich Kästner",
+  "answer2": "Bertolt Brecht",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "7a1f9d7b-b73f-5477-b3bc-46d9672367dc",
+  "quote": "Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt.",
+  "answer1": "Friedrich Nietzsche",
+  "answer2": "Ludwig Wittgenstein",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "57cdcebe-6597-5072-bdb2-e5e81afa31db",
+  "quote": "Das Leben ist wie Fahrradfahren. Um die Balance zu halten, musst du in Bewegung bleiben.",
+  "answer1": "Albert Einstein",
+  "answer2": "Marie Curie",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "e1b76c2f-914a-5f32-9025-72d8359c3af2",
+  "quote": "Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.",
+  "answer1": "Hermann Hesse",
+  "answer2": "Antoine de Saint-Exupéry",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "9563617a-0892-5728-8904-dc2900a796ce",
+  "quote": "Edel sei der Mensch, hilfreich und gut!",
+  "answer1": "Johann Wolfgang von Goethe",
+  "answer2": "Friedrich Schiller",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "d39730e6-b0f6-5961-96a5-ffb1d127c995",
+  "quote": "Wer nichts weiß, muss alles glauben.",
+  "answer1": "Erich Kästner",
+  "answer2": "Marie von Ebner-Eschenbach",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "cbef1745-7529-5789-9d20-5a2e57318cc8",
+  "quote": "Humor ist, wenn man trotzdem lacht.",
+  "answer1": "Otto Julius Bierbaum",
+  "answer2": "Wilhelm Busch",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "9deb4194-46b1-5b19-aa0f-194b3c90a6bd",
+  "quote": "Ich weiß, dass ich nichts weiß.",
+  "answer1": "Aristoteles",
+  "answer2": "Sokrates",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "5f115e81-43e9-532d-8bac-ac2f5103713f",
+  "quote": "Der Worte sind genug gewechselt, lasst mich auch endlich Taten sehn!",
+  "answer1": "Johann Wolfgang von Goethe",
+  "answer2": "Gotthold Ephraim Lessing",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "fca2e7d0-50c2-52b1-802b-6d300c263b5c",
+  "quote": "Ohne Musik wäre das Leben ein Irrtum.",
+  "answer1": "Ludwig van Beethoven",
+  "answer2": "Friedrich Nietzsche",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "09320521-c04c-5e55-907a-45c7c83f864d",
+  "quote": "Habe Mut, dich deines eigenen Verstandes zu bedienen!",
+  "answer1": "Immanuel Kant",
+  "answer2": "René Descartes",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "bd94dc8c-5902-555d-a10d-1d5c606209af",
+  "quote": "Gedanken sind zollfrei.",
+  "answer1": "Friedrich Schiller",
+  "answer2": "Martin Luther",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "43daf350-0d9c-5f96-8a4f-4d9482fae2cb",
+  "quote": "Wo aber Gefahr ist, wächst das Rettende auch.",
+  "answer1": "Friedrich Hölderlin",
+  "answer2": "Rainer Maria Rilke",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "a443e8ad-0579-5f61-8bea-7eb3d4abfec1",
+  "quote": "Es irrt der Mensch, solang er strebt.",
+  "answer1": "Heinrich Heine",
+  "answer2": "Johann Wolfgang von Goethe",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "3f2f506a-6b6f-536c-8d54-0a63acb1d08b",
+  "quote": "Die Kunst ist eine Tochter der Freiheit.",
+  "answer1": "Friedrich Schiller",
+  "answer2": "Immanuel Kant",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "9986a646-0ad2-5383-af18-935c567c03de",
+  "quote": "Und jedem Anfang wohnt ein Zauber inne.",
+  "answer1": "Rainer Maria Rilke",
+  "answer2": "Hermann Hesse",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "46893c37-ef1b-582f-b5e6-a43c6ab97277",
+  "quote": "Leben ist das, was passiert, während du eifrig dabei bist, andere Pläne zu machen.",
+  "answer1": "John Lennon",
+  "answer2": "Paul McCartney",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "486b4a79-23ae-51e1-bb6a-f032f3451a53",
+  "quote": "Wissen ist Macht.",
+  "answer1": "Isaac Newton",
+  "answer2": "Francis Bacon",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "22445b56-6ee4-5562-960e-69d203dd7955",
+  "quote": "Ich kam, ich sah, ich siegte.",
+  "answer1": "Julius Caesar",
+  "answer2": "Alexander der Große",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "0e530eca-a65e-54c4-846a-c56a04818bfd",
+  "quote": "Der Mensch ist, was er isst.",
+  "answer1": "Karl Marx",
+  "answer2": "Ludwig Feuerbach",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "fbb0c6c7-8228-5d51-b6cf-331ddfad4ec8",
+  "quote": "Ich habe keine besondere Begabung, sondern bin nur leidenschaftlich neugierig.",
+  "answer1": "Albert Einstein",
+  "answer2": "Thomas Edison",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "d0fba134-1467-5d6e-81dc-0c5b5a37ef85",
+  "quote": "Das Schönste, was wir erleben können, ist das Geheimnisvolle.",
+  "answer1": "Hermann Hesse",
+  "answer2": "Albert Einstein",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "99be3703-e944-5b81-8ec0-16912f2536f3",
+  "quote": "Wer A sagt, der muss nicht B sagen. Er kann auch erkennen, dass A falsch war.",
+  "answer1": "Bertolt Brecht",
+  "answer2": "Kurt Tucholsky",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "6d65f83c-83e1-5beb-9df2-18c83cef74e8",
+  "quote": "Erst kommt das Fressen, dann kommt die Moral.",
+  "answer1": "Heinrich Heine",
+  "answer2": "Bertolt Brecht",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "0eaf90cf-e6ce-511a-8849-e007e4c6f1ed",
+  "quote": "Freiheit ist immer die Freiheit des Andersdenkenden.",
+  "answer1": "Rosa Luxemburg",
+  "answer2": "Hannah Arendt",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "af9124e4-6fea-56a4-b9b2-e0fcdb02ff7f",
+  "quote": "Mehr Licht!",
+  "answer1": "Friedrich Schiller",
+  "answer2": "Johann Wolfgang von Goethe",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "4de026e9-6aed-5f23-afab-a4433aa29b05",
+  "quote": "Ich bin ein Berliner.",
+  "answer1": "John F. Kennedy",
+  "answer2": "Willy Brandt",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "4dab1f62-6493-59ab-ac89-2311d4ac9fe0",
+  "quote": "Fantasie ist wichtiger als Wissen, denn Wissen ist begrenzt.",
+  "answer1": "Leonardo da Vinci",
+  "answer2": "Albert Einstein",
+  "correct_answer": "2"
+ },
+ {
+  "uuid": "a38d5f10-ba6f-548c-b4fc-70ca5ced0b44",
+  "quote": "Wer immer strebend sich bemüht, den können wir erlösen.",
+  "answer1": "Johann Wolfgang von Goethe",
+  "answer2": "Friedrich Hölderlin",
+  "correct_answer": "1"
+ },
+ {
+  "uuid": "f043b328-a830-5c04-9880-00e605530020",
+  "quote": "Man muss das Unmögliche versuchen, um das Mögliche zu erreichen.",
+  "answer1": "Thomas Mann",
+  "answer2": "Hermann Hesse",
+  "correct_answer": "2"
+ }
+]

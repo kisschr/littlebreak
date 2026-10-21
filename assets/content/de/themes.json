@@ -1,0 +1,226 @@
+{
+ "1": {
+  "name": "Neuanfang & Winter",
+  "words": [
+   "SCHNEE",
+   "EIS",
+   "MÜTZE",
+   "SCHAL",
+   "SCHLITTEN",
+   "WINTER",
+   "FROST",
+   "IGLU",
+   "KUFEN",
+   "FLOCKE",
+   "PINGUIN",
+   "KAMIN",
+   "TEE",
+   "ZIEL",
+   "PLAN"
+  ]
+ },
+ "2": {
+  "name": "Liebe & Fasching",
+  "words": [
+   "HERZ",
+   "ROSE",
+   "KUSS",
+   "MASKE",
+   "KONFETTI",
+   "KOSTÜM",
+   "CLOWN",
+   "TANZ",
+   "BRIEF",
+   "LIEBE",
+   "FREUND",
+   "KRAPFEN",
+   "UMZUG",
+   "HUT"
+  ]
+ },
+ "3": {
+  "name": "Erwachen",
+  "words": [
+   "KNOSPE",
+   "KROKUS",
+   "VOGEL",
+   "NEST",
+   "WIND",
+   "REGEN",
+   "AMSEL",
+   "TULPE",
+   "BLÜTE",
+   "SAMEN",
+   "WIESE",
+   "LAMM",
+   "GRÜN",
+   "SONNE"
+  ]
+ },
+ "4": {
+  "name": "Ostern & Garten",
+  "words": [
+   "OSTEREI",
+   "HASE",
+   "KORB",
+   "BEET",
+   "SPATEN",
+   "TULPE",
+   "KÜKEN",
+   "GRAS",
+   "NEST",
+   "GARTEN",
+   "SAMEN",
+   "HUHN",
+   "EIER",
+   "ZAUN"
+  ]
+ },
+ "5": {
+  "name": "Blüte & Natur",
+  "words": [
+   "BIENE",
+   "BLUME",
+   "FALTER",
+   "HONIG",
+   "WIESE",
+   "KÄFER",
+   "PICKNICK",
+   "MOHN",
+   "NELKE",
+   "BLÜTE",
+   "LINDE",
+   "TEICH",
+   "FROSCH"
+  ]
+ },
+ "6": {
+  "name": "Sport & Bewegung",
+  "words": [
+   "BALL",
+   "TOR",
+   "LAUF",
+   "SPRUNG",
+   "RAD",
+   "TRIKOT",
+   "POKAL",
+   "TEAM",
+   "SIEG",
+   "RASEN",
+   "SCHWIMMEN",
+   "MEDAILLE",
+   "TURNEN"
+  ]
+ },
+ "7": {
+  "name": "Ferien & Meer",
+  "words": [
+   "STRAND",
+   "WELLE",
+   "MUSCHEL",
+   "INSEL",
+   "SEGEL",
+   "MÖWE",
+   "SAND",
+   "KOFFER",
+   "BOOT",
+   "HAFEN",
+   "KREBS",
+   "QUALLE",
+   "DÜNE",
+   "EIS"
+  ]
+ },
+ "8": {
+  "name": "Reisen & Welt",
+  "words": [
+   "KARTE",
+   "PASS",
+   "ZUG",
+   "FLUG",
+   "KOFFER",
+   "ATLAS",
+   "GLOBUS",
+   "HOTEL",
+   "ZELT",
+   "BRÜCKE",
+   "TURM",
+   "BERG",
+   "FLUSS",
+   "WÜSTE"
+  ]
+ },
+ "9": {
+  "name": "Schule & Wissen",
+  "words": [
+   "BUCH",
+   "HEFT",
+   "TAFEL",
+   "KREIDE",
+   "LUPE",
+   "ATLAS",
+   "FORMEL",
+   "BLEISTIFT",
+   "LINEAL",
+   "SCHULE",
+   "PAUSE",
+   "ERNTE",
+   "APFEL"
+  ]
+ },
+ "10": {
+  "name": "Herbst & Grusel",
+  "words": [
+   "KÜRBIS",
+   "LAUB",
+   "NEBEL",
+   "GEIST",
+   "KASTANIE",
+   "IGEL",
+   "PILZ",
+   "DRACHEN",
+   "EULE",
+   "HEXE",
+   "BESEN",
+   "NUSS",
+   "EICHEL",
+   "STURM"
+  ]
+ },
+ "11": {
+  "name": "Gemütlichkeit",
+  "words": [
+   "TEE",
+   "KERZE",
+   "DECKE",
+   "BUCH",
+   "LATERNE",
+   "SOCKEN",
+   "KAMIN",
+   "SESSEL",
+   "KAKAO",
+   "PLÄTZCHEN",
+   "NEBEL",
+   "MARTIN",
+   "WOLLE"
+  ]
+ },
+ "12": {
+  "name": "Advent & Jahresrückblick",
+  "words": [
+   "ADVENT",
+   "KERZE",
+   "STERN",
+   "TANNE",
+   "KRANZ",
+   "SCHNEE",
+   "GLOCKE",
+   "ENGEL",
+   "GESCHENK",
+   "PLÄTZCHEN",
+   "SCHLITTEN",
+   "NUSS",
+   "ZIMT"
+  ]
+ }
+}

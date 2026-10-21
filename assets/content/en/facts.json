@@ -1,0 +1,314 @@
+[
+ {
+  "s": "An octopus has three hearts.",
+  "a": true
+ },
+ {
+  "s": "The Sun is a star.",
+  "a": true
+ },
+ {
+  "s": "Spiders are insects.",
+  "a": false
+ },
+ {
+  "s": "Mount Everest is the highest mountain on Earth above sea level.",
+  "a": true
+ },
+ {
+  "s": "Whales are fish.",
+  "a": false
+ },
+ {
+  "s": "Botanically, tomatoes are berries.",
+  "a": true
+ },
+ {
+  "s": "The Moon produces its own light.",
+  "a": false
+ },
+ {
+  "s": "Honeybees dance to show each other where to find food.",
+  "a": true
+ },
+ {
+  "s": "Penguins live at the North Pole.",
+  "a": false
+ },
+ {
+  "s": "At sea level, water boils at 100 degrees Celsius.",
+  "a": true
+ },
+ {
+  "s": "The Great Wall of China can be seen from the Moon with the naked eye.",
+  "a": false
+ },
+ {
+  "s": "A leap year has 366 days.",
+  "a": true
+ },
+ {
+  "s": "Bats are birds.",
+  "a": false
+ },
+ {
+  "s": "The Pacific is the largest ocean on Earth.",
+  "a": true
+ },
+ {
+  "s": "Lightning never strikes the same place twice.",
+  "a": false
+ },
+ {
+  "s": "Kangaroos live in Australia.",
+  "a": true
+ },
+ {
+  "s": "A triangle has four corners.",
+  "a": false
+ },
+ {
+  "s": "Gold is liquid at room temperature.",
+  "a": false
+ },
+ {
+  "s": "The Earth takes about a year to travel around the Sun.",
+  "a": true
+ },
+ {
+  "s": "Snails have thousands of tiny teeth.",
+  "a": true
+ },
+ {
+  "s": "Strawberries carry their little seeds on the outside.",
+  "a": true
+ },
+ {
+  "s": "Berlin is the capital of Germany.",
+  "a": true
+ },
+ {
+  "s": "Vienna is the capital of Switzerland.",
+  "a": false
+ },
+ {
+  "s": "A marathon is just over 42 kilometres long.",
+  "a": true
+ },
+ {
+  "s": "Dolphins breathe through gills.",
+  "a": false
+ },
+ {
+  "s": "An adult usually has 32 teeth including wisdom teeth.",
+  "a": true
+ },
+ {
+  "s": "Butterflies taste with their feet.",
+  "a": true
+ },
+ {
+  "s": "The Eiffel Tower stands in Rome.",
+  "a": false
+ },
+ {
+  "s": "Venus is the hottest planet in our solar system.",
+  "a": true
+ },
+ {
+  "s": "Mars is also called the Red Planet.",
+  "a": true
+ },
+ {
+  "s": "Sharks are mammals.",
+  "a": false
+ },
+ {
+  "s": "Bamboo is a kind of grass.",
+  "a": true
+ },
+ {
+  "s": "Polar bears have black skin under their fur.",
+  "a": true
+ },
+ {
+  "s": "A hexagon has six sides.",
+  "a": true
+ },
+ {
+  "s": "7 times 8 equals 54.",
+  "a": false
+ },
+ {
+  "s": "Mushrooms are plants.",
+  "a": false
+ },
+ {
+  "s": "Ostriches bury their heads in the sand when in danger.",
+  "a": false
+ },
+ {
+  "s": "Hummingbirds can fly backwards.",
+  "a": true
+ },
+ {
+  "s": "The Zugspitze is the highest mountain in Germany.",
+  "a": true
+ },
+ {
+  "s": "Lake Constance borders Germany, Austria and Switzerland.",
+  "a": true
+ },
+ {
+  "s": "A century lasts 1,000 years.",
+  "a": false
+ },
+ {
+  "s": "Sound travels faster than light.",
+  "a": false
+ },
+ {
+  "s": "Plants take in carbon dioxide and give off oxygen.",
+  "a": true
+ },
+ {
+  "s": "Goldfish can only remember things for three seconds.",
+  "a": false
+ },
+ {
+  "s": "The Statue of Liberty stands in New York.",
+  "a": true
+ },
+ {
+  "s": "Lions usually live in prides.",
+  "a": true
+ },
+ {
+  "s": "A kilometre has 1,000 metres.",
+  "a": true
+ },
+ {
+  "s": "Diamonds are made of carbon.",
+  "a": true
+ },
+ {
+  "s": "Saturn has rings.",
+  "a": true
+ },
+ {
+  "s": "The Mona Lisa was painted by Vincent van Gogh.",
+  "a": false
+ },
+ {
+  "s": "Spiders have eight legs.",
+  "a": true
+ },
+ {
+  "s": "Octopuses have blue blood.",
+  "a": true
+ },
+ {
+  "s": "The equator divides the Earth into a northern and a southern hemisphere.",
+  "a": true
+ },
+ {
+  "s": "Ice is heavier than water, so it sinks.",
+  "a": false
+ },
+ {
+  "s": "A week has eight days.",
+  "a": false
+ },
+ {
+  "s": "Giraffes have as many neck bones as humans.",
+  "a": true
+ },
+ {
+  "s": "Hedgehogs hibernate in winter.",
+  "a": true
+ },
+ {
+  "s": "Frogs are reptiles.",
+  "a": false
+ },
+ {
+  "s": "Wolfgang Amadeus Mozart was born in Salzburg.",
+  "a": true
+ },
+ {
+  "s": "German Unity Day is celebrated on 3 October.",
+  "a": true
+ },
+ {
+  "s": "Ants can carry many times their own body weight.",
+  "a": true
+ },
+ {
+  "s": "A rainbow appears when sunlight is refracted in raindrops.",
+  "a": true
+ },
+ {
+  "s": "Camels store water in their humps.",
+  "a": false
+ },
+ {
+  "s": "In the northern hemisphere, the longest day of the year is in June.",
+  "a": true
+ },
+ {
+  "s": "Earth is the planet closest to the Sun.",
+  "a": false
+ },
+ {
+  "s": "Mercury is the smallest planet in our solar system.",
+  "a": true
+ },
+ {
+  "s": "A polar bear is a predator.",
+  "a": true
+ },
+ {
+  "s": "Starfish have a brain.",
+  "a": false
+ },
+ {
+  "s": "A regular football match lasts two halves of 45 minutes.",
+  "a": true
+ },
+ {
+  "s": "The Olympic logo has five rings.",
+  "a": true
+ },
+ {
+  "s": "The number pi is exactly 3.",
+  "a": false
+ },
+ {
+  "s": "An octopus can change its colour.",
+  "a": true
+ },
+ {
+  "s": "Koalas are bears.",
+  "a": false
+ },
+ {
+  "s": "Antarctica is an icy desert at the South Pole.",
+  "a": true
+ },
+ {
+  "s": "Autumn leaves change colour because green chlorophyll breaks down.",
+  "a": true
+ },
+ {
+  "s": "Pumpkins belong to the gourd family, like cucumbers.",
+  "a": true
+ },
+ {
+  "s": "Sunlight takes about eight minutes to reach the Earth.",
+  "a": true
+ },
+ {
+  "s": "The Rhine flows through Germany.",
+  "a": true
+ }
+]
