@@ -61,24 +61,27 @@ abstract final class KpGlassStyle {
   );
 }
 
+/// Side margin that keeps content at most [maxWidth] wide and centred, so
+/// phone layouts stay phone-sized on tablets; [base] on phones.
+double kpSideInset(BuildContext context, double base, {double maxWidth = kpContentWidth}) =>
+    math.max(base, (MediaQuery.sizeOf(context).width - maxWidth) / 2);
+
+/// Widest column of content on tablets.
+const double kpContentWidth = 620;
+
 /// Text styles of the designs (Nunito, heavy weights).
 abstract final class KpText {
   static TextStyle display(Color color, {double size = 36}) => TextStyle(
-        fontFamily: 'Nunito',
-        fontSize: size,
-        fontWeight: FontWeight.w900,
-        letterSpacing: -0.5,
-        height: 1.05,
-        color: color,
-      );
+    fontFamily: 'Nunito',
+    fontSize: size,
+    fontWeight: FontWeight.w900,
+    letterSpacing: -0.5,
+    height: 1.05,
+    color: color,
+  );
 
-  static TextStyle title(Color color, {double size = 22}) => TextStyle(
-        fontFamily: 'Nunito',
-        fontSize: size,
-        fontWeight: FontWeight.w900,
-        color: color,
-        height: 1.15,
-      );
+  static TextStyle title(Color color, {double size = 22}) =>
+      TextStyle(fontFamily: 'Nunito', fontSize: size, fontWeight: FontWeight.w900, color: color, height: 1.15);
 
   static TextStyle label(Color color, {double size = 15, FontWeight weight = FontWeight.w800}) =>
       TextStyle(fontFamily: 'Nunito', fontSize: size, fontWeight: weight, color: color, height: 1.25);
@@ -99,8 +102,7 @@ class KpBackground extends StatefulWidget {
 }
 
 class _KpBackgroundState extends State<KpBackground> with SingleTickerProviderStateMixin {
-  late final AnimationController _drift =
-      AnimationController(vsync: this, duration: const Duration(seconds: 24));
+  late final AnimationController _drift = AnimationController(vsync: this, duration: const Duration(seconds: 24));
 
   @override
   void didChangeDependencies() {
@@ -187,19 +189,19 @@ class _Blob {
   final int color;
 
   Widget build(Color c, Offset drift) => Positioned(
-        left: left == null ? null : left! + drift.dx,
-        right: right == null ? null : right! - drift.dx,
-        top: top == null ? null : top! + drift.dy,
-        bottom: bottom == null ? null : bottom! - drift.dy,
-        width: size,
-        height: size,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: RadialGradient(colors: [c, c.withValues(alpha: 0)], stops: const [0, 0.7]),
-          ),
-        ),
-      );
+    left: left == null ? null : left! + drift.dx,
+    right: right == null ? null : right! - drift.dx,
+    top: top == null ? null : top! + drift.dy,
+    bottom: bottom == null ? null : bottom! - drift.dy,
+    width: size,
+    height: size,
+    child: DecoratedBox(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: RadialGradient(colors: [c, c.withValues(alpha: 0)], stops: const [0, 0.7]),
+      ),
+    ),
+  );
 }
 
 /// A glass platter (GlassCard) with the designs' radius and padding.
@@ -269,11 +271,7 @@ class _PressableState extends State<_Pressable> {
         HapticFeedback.selectionClick();
         widget.onTap();
       },
-      child: AnimatedScale(
-        scale: _down ? 0.97 : 1,
-        duration: const Duration(milliseconds: 120),
-        child: widget.child,
-      ),
+      child: AnimatedScale(scale: _down ? 0.97 : 1, duration: const Duration(milliseconds: 120), child: widget.child),
     );
   }
 }
@@ -326,7 +324,10 @@ class KpPrimaryButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[
-            IconTheme(data: const IconThemeData(color: Colors.white), child: icon!),
+            IconTheme(
+              data: const IconThemeData(color: Colors.white),
+              child: icon!,
+            ),
             const SizedBox(width: 10),
           ],
           Flexible(
@@ -603,4 +604,38 @@ class _PlayPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_PlayPainter old) => false;
+}
+
+/// Big text that never breaks inside a word: when its longest word is wider
+/// than the space ("Zahlenpyramide" next to a thumbnail), the font shrinks
+/// until that word fits on one line.
+class KpFitText extends StatelessWidget {
+  const KpFitText(this.text, {super.key, required this.style, this.textAlign});
+
+  final String text;
+  final TextStyle style;
+  final TextAlign? textAlign;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final scaler = MediaQuery.textScalerOf(context);
+        var widest = 0.0;
+        for (final word in text.split(RegExp(r'\s+'))) {
+          final painter = TextPainter(
+            text: TextSpan(text: word, style: style),
+            textDirection: TextDirection.ltr,
+            textScaler: scaler,
+          )..layout();
+          widest = math.max(widest, painter.width);
+          painter.dispose();
+        }
+        final fitted = widest > constraints.maxWidth
+            ? style.copyWith(fontSize: (style.fontSize ?? 14) * constraints.maxWidth / widest * 0.98)
+            : style;
+        return Text(text, style: fitted, textAlign: textAlign);
+      },
+    );
+  }
 }

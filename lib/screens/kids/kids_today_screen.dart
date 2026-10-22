@@ -123,7 +123,7 @@ class KidsTodayScreen extends StatelessWidget {
                     : GameThumbnail(plan: plan, size: 160, tilt: false),
               ),
               const SizedBox(height: 14),
-              Text(title, style: KpText.title(palette.ink, size: 28)),
+              KpFitText(title, style: KpText.title(palette.ink, size: 28)),
               const SizedBox(height: 2),
               Text(prompt, style: KpText.label(palette.inkSoft, size: 16, weight: FontWeight.w700)),
               const SizedBox(height: 14),

@@ -186,7 +186,12 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
             return Stack(
               children: [
                 ListView(
-                  padding: EdgeInsets.fromLTRB(16, insets.top + 12, 16, insets.bottom + 24),
+                  padding: EdgeInsets.fromLTRB(
+                    kpSideInset(context, 16),
+                    insets.top + 12,
+                    kpSideInset(context, 16),
+                    insets.bottom + 24,
+                  ),
                   children: [
                     _Toolbar(
                       title: '${l.gameName(widget.plan.type)} · ${l.difficultyName(widget.difficulty)}',

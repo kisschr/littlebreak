@@ -80,6 +80,11 @@ Premium-Schalter zum Testen. Für Release-Builds ohne Store:
 - `build.yml` baut APK und Web nur auf Knopfdruck oder für einen Versions-Tag
   (`git tag v0.1.0 && git push origin v0.1.0`). Die Dateien liegen danach als
   Artefakte am Workflow-Lauf.
+- `store-screenshots.yml` erzeugt auf Knopfdruck die Store-Screenshots
+  (Android-Handy 1080 × 1920, iPhone 6,9" 1320 × 2868, iPad 13" 2064 × 2752,
+  je Deutsch und Englisch) als Artefakt `store-screenshots`. Lokal:
+  `flutter test test/store --dart-define=STORE_SHOTS=true`, die Bilder liegen
+  dann in `build/store_screenshots/`.
 
 ## Noch offen
 

@@ -102,7 +102,12 @@ class ResultScreen extends StatelessWidget {
         children: [
           const Positioned.fill(child: _Confetti()),
           ListView(
-            padding: EdgeInsets.fromLTRB(18, insets.top + 12, 18, insets.bottom + 24),
+            padding: EdgeInsets.fromLTRB(
+              kpSideInset(context, 18),
+              insets.top + 12,
+              kpSideInset(context, 18),
+              insets.bottom + 24,
+            ),
             children: [
               Align(
                 alignment: Alignment.centerRight,
@@ -131,7 +136,7 @@ class ResultScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              Text(title, textAlign: TextAlign.center, style: KpText.display(palette.ink, size: 34)),
+              KpFitText(title, textAlign: TextAlign.center, style: KpText.display(palette.ink, size: 34)),
               const SizedBox(height: 6),
               Text(
                 '${l.gameName(summary.plan.type)} ${l.difficultyName(summary.difficulty)} · ${l.dayNumber(summary.plan.dayNumber)}',
