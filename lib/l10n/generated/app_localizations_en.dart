@@ -640,6 +640,22 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get stickerColorIn => 'Colour it in';
+
+  @override
+  String get stickerContinue => 'Keep colouring';
+
+  @override
+  String get myPictures => 'My pictures';
+
+  @override
+  String get stickerColoredTitle => 'Beautiful!';
+
+  @override
+  String get stickerColoredBody =>
+      'Your picture is done. Tap another sticker to keep colouring.';
+
+  @override
   String get gateTitle => 'Ask a grown-up';
 
   @override

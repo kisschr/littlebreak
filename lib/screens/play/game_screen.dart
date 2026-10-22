@@ -16,6 +16,7 @@ import '../../l10n/generated/app_localizations.dart';
 import '../../l10n/texts.dart';
 import 'how_to_sheet.dart';
 import 'result_screen.dart';
+import '../../widgets/dialog.dart';
 
 /// One level of one day: glass toolbar, the engine's opaque board, pause,
 /// hints, the first-time "So geht's" and the hand-over to the result.
@@ -132,13 +133,13 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
     final wasPaused = controller.paused;
     controller.setPaused(true);
     var leave = false;
-    await GlassDialog.show<void>(
+    await KpDialog.show<void>(
       context: context,
       title: l.leaveTitle,
       message: l.leaveBody,
       actions: [
-        GlassDialogAction(label: l.keepPlaying, isPrimary: true, onPressed: () => Navigator.of(context).pop()),
-        GlassDialogAction(
+        KpDialogAction(label: l.keepPlaying, isPrimary: true, onPressed: () => Navigator.of(context).pop()),
+        KpDialogAction(
           label: l.leave,
           isDestructive: true,
           onPressed: () {
@@ -185,7 +186,12 @@ class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
             return Stack(
               children: [
                 ListView(
-                  padding: EdgeInsets.fromLTRB(16, insets.top + 12, 16, insets.bottom + 24),
+                  padding: EdgeInsets.fromLTRB(
+                    kpSideInset(context, 16),
+                    insets.top + 12,
+                    kpSideInset(context, 16),
+                    insets.bottom + 24,
+                  ),
                   children: [
                     _Toolbar(
                       title: '${l.gameName(widget.plan.type)} · ${l.difficultyName(widget.difficulty)}',

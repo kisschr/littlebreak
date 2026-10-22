@@ -29,10 +29,10 @@ class AppState extends ChangeNotifier {
     DateTime Function()? clock,
     this.planner = const DayPlanner(),
     this.accessPolicy = const AccessPolicy(),
-  })  : _profilesRepo = profiles,
-        _progressRepo = progress,
-        _settingsRepo = settings,
-        _clock = clock ?? DateTime.now;
+  }) : _profilesRepo = profiles,
+       _progressRepo = progress,
+       _settingsRepo = settings,
+       _clock = clock ?? DateTime.now;
 
   final ProfileRepository _profilesRepo;
   final ProgressRepository _progressRepo;
@@ -82,8 +82,12 @@ class AppState extends ChangeNotifier {
   // ---------------------------------------------------------------- profiles
 
   Future<Profile> createProfile({required String name, required Audience audience}) async {
+    var stamp = _clock().microsecondsSinceEpoch;
+    while (_profiles.any((p) => p.id == '$stamp')) {
+      stamp++;
+    }
     final profile = Profile(
-      id: '${_clock().microsecondsSinceEpoch}',
+      id: '$stamp',
       name: name.trim(),
       audience: audience,
       createdAt: today,
@@ -132,8 +136,8 @@ class AppState extends ChangeNotifier {
   }
 
   /// Streak of any profile (shown on the profile picker).
-  int streakOf(Profile profile) => ProgressStats(_progressRepo.loadRecords(profile.id))
-      .streak(today: today, since: profile.createdAt);
+  int streakOf(Profile profile) =>
+      ProgressStats(_progressRepo.loadRecords(profile.id)).streak(today: today, since: profile.createdAt);
 
   int get streak {
     final p = _active;
@@ -144,8 +148,7 @@ class AppState extends ChangeNotifier {
 
   DayPlan planFor(DateTime date) => planner.planFor(date, audience: audience);
 
-  DayAccess accessFor(DateTime date) =>
-      accessPolicy.accessFor(date, today: today, premium: isPremium);
+  DayAccess accessFor(DateTime date) => accessPolicy.accessFor(date, today: today, premium: isPremium);
 
   DayRecord? recordFor(DateTime date) => _records[dateKey(date)];
 
@@ -221,11 +224,7 @@ class AppState extends ChangeNotifier {
     required String title,
     required String body,
   }) async {
-    var next = _settings.copyWith(
-      reminderEnabled: enabled,
-      reminderHour: hour,
-      reminderMinute: minute,
-    );
+    var next = _settings.copyWith(reminderEnabled: enabled, reminderHour: hour, reminderMinute: minute);
     var ok = true;
     if (enabled) {
       ok = await reminders.scheduleDaily(

@@ -10,6 +10,7 @@ import '../design/palette.dart';
 import '../domain/models.dart';
 import '../l10n/generated/app_localizations.dart';
 import 'kids/parental_gate.dart';
+import '../widgets/dialog.dart';
 
 /// Opens "Kleine Pause Premium" as a full page, like the design. Kids
 /// profiles pass the parental gate first.
@@ -59,11 +60,11 @@ class _PremiumPanelState extends State<PremiumPanel> {
 
   Future<void> _message(String title, String body) {
     final l = AppLocalizations.of(context);
-    return GlassDialog.show<void>(
+    return KpDialog.show<void>(
       context: context,
       title: title,
       message: body,
-      actions: [GlassDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
+      actions: [KpDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
     );
   }
 

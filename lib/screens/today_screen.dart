@@ -16,6 +16,7 @@ import '../widgets/game_thumbnail.dart';
 import '../widgets/page.dart';
 import 'play/play_flow.dart';
 import 'premium_sheet.dart';
+import '../widgets/dialog.dart';
 
 /// "Heute": the day card with today's game, this week and tomorrow.
 class TodayScreen extends StatelessWidget {
@@ -66,11 +67,11 @@ class StreakButton extends StatelessWidget {
     return KpGlassButton(
       pill: true,
       semanticLabel: l.streakDays(days),
-      onPressed: () => GlassDialog.show<void>(
+      onPressed: () => KpDialog.show<void>(
         context: context,
         title: l.streakDays(days),
         message: l.streakExplain,
-        actions: [GlassDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
+        actions: [KpDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -125,11 +126,13 @@ class DayCard extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 5),
                     ),
                     const SizedBox(height: 10),
-                    Text(
+                    KpFitText(
                       l.gameName(plan.type),
                       // Long names ("Wahr oder falsch") get two lines, not three.
-                      style: KpText.display(palette.ink, size: l.gameName(plan.type).length > 11 ? 34 : 42)
-                          .copyWith(letterSpacing: -1, height: 1.05),
+                      style: KpText.display(
+                        palette.ink,
+                        size: l.gameName(plan.type).length > 11 ? 34 : 42,
+                      ).copyWith(letterSpacing: -1, height: 1.05),
                     ),
                     const SizedBox(height: 6),
                     Text(subtitle, style: KpText.body(palette.inkSoft)),
@@ -246,7 +249,13 @@ class _WeekDay extends StatelessWidget {
       );
     } else {
       bubble = CustomPaint(
-        painter: DashedRRectPainter(color: palette.inkSoft.withValues(alpha: 0.5), radius: 18, strokeWidth: 1, dash: 3, gap: 3),
+        painter: DashedRRectPainter(
+          color: palette.inkSoft.withValues(alpha: 0.5),
+          radius: 18,
+          strokeWidth: 1,
+          dash: 3,
+          gap: 3,
+        ),
         child: Container(
           width: 36,
           height: 36,
@@ -263,7 +272,11 @@ class _WeekDay extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             l.weekdayShort(date.weekday),
-            style: KpText.label(isToday ? palette.ink : palette.inkSoft, size: 12, weight: isToday ? FontWeight.w900 : FontWeight.w700),
+            style: KpText.label(
+              isToday ? palette.ink : palette.inkSoft,
+              size: 12,
+              weight: isToday ? FontWeight.w900 : FontWeight.w700,
+            ),
           ),
         ],
       ),

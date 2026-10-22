@@ -78,6 +78,7 @@ class KpTabBar extends StatelessWidget {
       selectedIndex: selectedIndex,
       onTabSelected: onTabSelected,
       barHeight: large ? 80 : 68,
+      horizontalPadding: kpSideInset(context, 20, maxWidth: 520),
       iconSize: iconSize,
       labelFontSize: large ? 14 : 12,
       settings: large ? KpGlassStyle.kidsSurface : KpGlassStyle.surface,
