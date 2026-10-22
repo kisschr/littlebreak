@@ -29,6 +29,8 @@ import 'package:kleine_pause/domain/models.dart';
 import 'package:kleine_pause/games/coloring/motifs.dart';
 import 'package:kleine_pause/games/game_framework.dart';
 import 'package:kleine_pause/l10n/generated/app_localizations.dart';
+import 'package:kleine_pause/screens/kids/sticker.dart';
+import 'package:kleine_pause/screens/kids/stickers_screen.dart';
 import 'package:kleine_pause/screens/main_shell.dart';
 import 'package:kleine_pause/screens/play/game_screen.dart';
 import 'package:kleine_pause/screens/play/play_flow.dart';
@@ -117,6 +119,18 @@ void main() {
         await state.selectProfile(state.profiles.firstWhere((p) => p.isKid).id);
         await shots.settle();
         await shots.take('07_kids');
+
+        await shots.tapTab(l.tabStickers);
+        await shots.take('08_stickers');
+        final stickerContext = tester.element(find.byType(StickersScreen));
+        unawaited(showSticker(stickerContext, DateTime(_today.year, _today.month, 5)));
+        await shots.settle();
+        await shots.take('09_sticker');
+        Navigator.of(stickerContext).pop();
+        await shots.settle();
+        unawaited(Navigator.of(stickerContext).push(FreeColoringScreen.route('hedgehog')));
+        await shots.settle();
+        await shots.take('10_free_coloring');
       });
     }
   }

@@ -10,6 +10,7 @@ import '../../design/palette.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../../widgets/page.dart';
 import 'kids_today_screen.dart';
+import 'sticker.dart';
 
 /// One sticker page per month: every played day earns a sticker.
 class StickersScreen extends StatelessWidget {
@@ -22,7 +23,6 @@ class StickersScreen extends StatelessWidget {
     final state = context.watch<AppState>();
     final today = state.today;
     final locale = Localizations.localeOf(context).toLanguageTag();
-    final colors = [palette.highlight, palette.blobs[2], palette.successSoft, palette.blobs[3], palette.accent];
     return KpScrollBody(
       withTabBar: true,
       children: [
@@ -57,18 +57,10 @@ class StickersScreen extends StatelessWidget {
                       for (var i = 0; i < slots; i++)
                         i < days.length
                             ? Semantics(
+                                button: true,
                                 label: l.stickerFor(DateFormat.MMMMd(locale).format(days[i])),
-                                child: Container(
-                                  width: 48,
-                                  height: 48,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: colors[days[i].day % colors.length],
-                                    border: Border.all(color: Colors.white, width: 3),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text('${days[i].day}', style: KpText.label(palette.ink, size: 16, weight: FontWeight.w900)),
-                                ),
+                                excludeSemantics: true,
+                                child: StickerBadge(day: days[i], onTap: () => showSticker(context, days[i])),
                               )
                             : Container(
                                 width: 48,

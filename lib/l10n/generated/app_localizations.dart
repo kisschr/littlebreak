@@ -1160,6 +1160,24 @@ abstract class AppLocalizations {
   /// **'Sticker vom {date}'**
   String stickerFor(String date);
 
+  /// No description provided for @stickerColorIn.
+  ///
+  /// In de, this message translates to:
+  /// **'Ausmalen'**
+  String get stickerColorIn;
+
+  /// No description provided for @stickerColoredTitle.
+  ///
+  /// In de, this message translates to:
+  /// **'Wunderschön!'**
+  String get stickerColoredTitle;
+
+  /// No description provided for @stickerColoredBody.
+  ///
+  /// In de, this message translates to:
+  /// **'Dein Bild ist fertig. Tipp einen anderen Sticker an, um weiterzumalen.'**
+  String get stickerColoredBody;
+
   /// No description provided for @gateTitle.
   ///
   /// In de, this message translates to:

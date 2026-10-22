@@ -640,6 +640,16 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get stickerColorIn => 'Ausmalen';
+
+  @override
+  String get stickerColoredTitle => 'Wunderschön!';
+
+  @override
+  String get stickerColoredBody =>
+      'Dein Bild ist fertig. Tipp einen anderen Sticker an, um weiterzumalen.';
+
+  @override
   String get gateTitle => 'Frag deine Eltern';
 
   @override

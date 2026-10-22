@@ -384,6 +384,9 @@
       }
     }
   },
+  "stickerColorIn": "Ausmalen",
+  "stickerColoredTitle": "Wunderschön!",
+  "stickerColoredBody": "Dein Bild ist fertig. Tipp einen anderen Sticker an, um weiterzumalen.",
   "gateTitle": "Frag deine Eltern",
   "gateBody": "Dieser Bereich ist für Erwachsene.",
   "gateQuestion": "Wie viel ist {a} × {b}?",
