@@ -128,7 +128,7 @@ void main() {
         await shots.take('09_sticker');
         Navigator.of(stickerContext).pop();
         await shots.settle();
-        unawaited(Navigator.of(stickerContext).push(FreeColoringScreen.route('hedgehog')));
+        unawaited(Navigator.of(stickerContext).push(FreeColoringScreen.route(DateTime(_today.year, _today.month, 5))));
         await shots.settle();
         await shots.take('10_free_coloring');
       });
@@ -186,6 +186,17 @@ Future<AppState> _seededState(String lang) async {
       LevelResult(stars: 3, seconds: 120, mistakes: 0, completedAt: date),
     );
   }
+  // A sticker coloured halfway, to continue in the free colouring shot.
+  final sticker = Motifs.byId(Stickers.motifFor(DateTime(_today.year, _today.month, 5)));
+  await state.addToGallery(
+    GalleryItem(
+      dateKey: dateKey(DateTime(_today.year, _today.month, 5)),
+      gameId: Stickers.galleryId,
+      motif: Stickers.motifFor(DateTime(_today.year, _today.month, 5)),
+      difficulty: Difficulty.easy,
+      colors: [for (final (i, r) in sticker.regions.indexed) i.isEven ? kCrayons[r.crayon].toARGB32() : null],
+    ),
+  );
   await state.selectProfile(adult.id);
 
   // Coloured pictures for the gallery.

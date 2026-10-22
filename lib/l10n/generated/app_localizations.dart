@@ -1166,6 +1166,18 @@ abstract class AppLocalizations {
   /// **'Ausmalen'**
   String get stickerColorIn;
 
+  /// No description provided for @stickerContinue.
+  ///
+  /// In de, this message translates to:
+  /// **'Weitermalen'**
+  String get stickerContinue;
+
+  /// No description provided for @myPictures.
+  ///
+  /// In de, this message translates to:
+  /// **'Meine Bilder'**
+  String get myPictures;
+
   /// No description provided for @stickerColoredTitle.
   ///
   /// In de, this message translates to:

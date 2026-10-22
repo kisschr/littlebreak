@@ -643,6 +643,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get stickerColorIn => 'Ausmalen';
 
   @override
+  String get stickerContinue => 'Weitermalen';
+
+  @override
+  String get myPictures => 'Meine Bilder';
+
+  @override
   String get stickerColoredTitle => 'Wunderschön!';
 
   @override

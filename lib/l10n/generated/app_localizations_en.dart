@@ -643,6 +643,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get stickerColorIn => 'Colour it in';
 
   @override
+  String get stickerContinue => 'Keep colouring';
+
+  @override
+  String get myPictures => 'My pictures';
+
+  @override
   String get stickerColoredTitle => 'Beautiful!';
 
   @override

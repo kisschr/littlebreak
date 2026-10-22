@@ -4,11 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
+import 'package:provider/provider.dart';
 
+import '../../app/app_state.dart';
+import '../../core/dates.dart';
 import '../../core/seeded_random.dart';
+import '../../data/repositories.dart';
 import '../../design/components.dart';
 import '../../design/icons.dart';
 import '../../design/palette.dart';
+import '../../domain/models.dart';
 import '../../games/coloring/coloring_game.dart';
 import '../../games/coloring/motif_painter.dart';
 import '../../games/coloring/motifs.dart';
@@ -21,6 +26,13 @@ import '../../widgets/dialog.dart';
 /// The picture on a day's sticker: every other one a seasonal motif of the
 /// month, the rest from the whole set, always the same for the same day.
 abstract final class Stickers {
+  /// Gallery entries of coloured-in stickers carry this instead of a game id.
+  static const galleryId = 'sticker';
+
+  /// The child's saved colouring of a day's sticker, if any.
+  static GalleryItem? coloringOf(AppState state, DateTime day) =>
+      state.gallery.where((g) => g.gameId == galleryId && g.dateKey == dateKey(day)).firstOrNull;
+
   static const _all = [
     'pumpkin', 'heart', 'flower', 'star', 'tree', 'lantern', 'mask', 'egg', 'leaf', 'mushroom', 'house', //
     'fish', 'snowman', 'sun', 'butterfly', 'hedgehog', 'icecream', 'sailboat', 'umbrella',
@@ -202,12 +214,14 @@ class _StickerViewState extends State<_StickerView> with TickerProviderStateMixi
                   Text(l.stickerFor(date), textAlign: TextAlign.center, style: KpText.label(palette.inkSoft, size: 16)),
                   const SizedBox(height: 20),
                   KpPrimaryButton(
-                    label: l.stickerColorIn,
+                    label: Stickers.coloringOf(context.read<AppState>(), widget.day) == null
+                        ? l.stickerColorIn
+                        : l.stickerContinue,
                     color: palette.success,
                     icon: const KpIcon(KpIcons.palette, size: 22, color: Colors.white),
                     onPressed: () {
                       final navigator = Navigator.of(context)..pop();
-                      navigator.push(FreeColoringScreen.route(motifId));
+                      navigator.push(FreeColoringScreen.route(widget.day));
                     },
                   ),
                 ],
@@ -220,25 +234,53 @@ class _StickerViewState extends State<_StickerView> with TickerProviderStateMixi
   }
 }
 
-/// Free colouring of one motif, outside the daily games: no levels, no
-/// score, every crayon of the box.
+/// Free colouring of a sticker's motif, outside the daily games: no levels,
+/// no score, every crayon of the box. The picture is kept in the child's
+/// gallery and can be continued later.
 class FreeColoringScreen extends StatefulWidget {
-  const FreeColoringScreen({super.key, required this.motifId});
+  const FreeColoringScreen({super.key, required this.day});
 
-  final String motifId;
+  final DateTime day;
 
-  static Route<void> route(String motifId) =>
-      MaterialPageRoute<void>(builder: (_) => FreeColoringScreen(motifId: motifId));
+  static Route<void> route(DateTime day) => MaterialPageRoute<void>(builder: (_) => FreeColoringScreen(day: day));
 
   @override
   State<FreeColoringScreen> createState() => _FreeColoringScreenState();
 }
 
 class _FreeColoringScreenState extends State<FreeColoringScreen> {
-  late final Motif motif = Motifs.byId(widget.motifId);
-  late List<int?> fills = List<int?>.filled(motif.regions.length, null);
+  late final AppState state = context.read<AppState>();
+  late final String motifId = Stickers.motifFor(widget.day);
+  late final Motif motif = Motifs.byId(motifId);
+  late List<int?> fills = _saved();
   final List<List<int?>> _history = [];
   int selected = 0;
+
+  /// The saved picture as crayon indices (colours not in the box stay empty).
+  List<int?> _saved() {
+    final saved = Stickers.coloringOf(state, widget.day)?.colors ?? const [];
+    return [
+      for (var i = 0; i < motif.regions.length; i++) i < saved.length && saved[i] != null ? _crayonOf(saved[i]!) : null,
+    ];
+  }
+
+  static int? _crayonOf(int argb) {
+    final i = kCrayons.indexWhere((c) => c.toARGB32() == argb);
+    return i < 0 ? null : i;
+  }
+
+  Future<void> _save() async {
+    if (fills.every((f) => f == null) && Stickers.coloringOf(state, widget.day) == null) return;
+    await state.addToGallery(
+      GalleryItem(
+        dateKey: dateKey(widget.day),
+        gameId: Stickers.galleryId,
+        motif: motifId,
+        difficulty: Difficulty.easy,
+        colors: [for (final f in fills) f == null ? null : kCrayons[f].toARGB32()],
+      ),
+    );
+  }
 
   void _paint(Offset local, double side) {
     final region = motif.regionAt(local / side * Motif.size);
@@ -257,13 +299,15 @@ class _FreeColoringScreenState extends State<FreeColoringScreen> {
 
   Future<void> _done() async {
     final l = AppLocalizations.of(context);
+    await _save();
+    if (!mounted) return;
     await KpDialog.show<void>(
       context: context,
       title: l.stickerColoredTitle,
       message: l.stickerColoredBody,
       actions: [KpDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
     );
-    if (mounted) Navigator.of(context).pop();
+    if (mounted) Navigator.of(context).pop(true);
   }
 
   @override
@@ -272,80 +316,86 @@ class _FreeColoringScreenState extends State<FreeColoringScreen> {
     final palette = KpPalette.of(context);
     final insets = MediaQuery.paddingOf(context);
     final side = kpSideInset(context, 16);
-    return GlassScaffold(
-      settings: KpGlassStyle.of(context),
-      background: const KpBackground(variant: 1),
-      body: ListView(
-        padding: EdgeInsets.fromLTRB(side, insets.top + 12, side, insets.bottom + 24),
-        children: [
-          Row(
-            children: [
-              KpGlassButton(
-                semanticLabel: l.close,
-                onPressed: () => Navigator.of(context).pop(),
-                child: const KpCloseIcon(),
-              ),
-              const SizedBox(width: 12),
-              Expanded(child: Text(l.motifName(widget.motifId), style: KpText.title(palette.ink, size: 24))),
-            ],
-          ),
-          const SizedBox(height: 18),
-          GameBoard(
-            padding: const EdgeInsets.all(14),
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: LayoutBuilder(
-                builder: (context, c) => GestureDetector(
-                  onTapUp: (d) => _paint(d.localPosition, c.maxWidth),
-                  child: Semantics(
-                    label: l.coloringLabel,
-                    child: CustomPaint(
-                      size: Size.square(c.maxWidth),
-                      painter: MotifPainter(
-                        motif: motif,
-                        fills: [for (final f in fills) f == null ? null : kCrayons[f]],
-                        lineColor: palette.ink,
+    // Leaving any way keeps what was painted so far.
+    return PopScope(
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop && result != true) _save();
+      },
+      child: GlassScaffold(
+        settings: KpGlassStyle.of(context),
+        background: const KpBackground(variant: 1),
+        body: ListView(
+          padding: EdgeInsets.fromLTRB(side, insets.top + 12, side, insets.bottom + 24),
+          children: [
+            Row(
+              children: [
+                KpGlassButton(
+                  semanticLabel: l.close,
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: const KpCloseIcon(),
+                ),
+                const SizedBox(width: 12),
+                Expanded(child: Text(l.motifName(motifId), style: KpText.title(palette.ink, size: 24))),
+              ],
+            ),
+            const SizedBox(height: 18),
+            GameBoard(
+              padding: const EdgeInsets.all(14),
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: LayoutBuilder(
+                  builder: (context, c) => GestureDetector(
+                    onTapUp: (d) => _paint(d.localPosition, c.maxWidth),
+                    child: Semantics(
+                      label: l.coloringLabel,
+                      child: CustomPaint(
+                        size: Size.square(c.maxWidth),
+                        painter: MotifPainter(
+                          motif: motif,
+                          fills: [for (final f in fills) f == null ? null : kCrayons[f]],
+                          lineColor: palette.ink,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 16),
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 8,
-            runSpacing: 10,
-            children: [
-              for (var k = 0; k < kCrayons.length; k++)
-                CrayonDot(
-                  size: 40,
-                  color: kCrayons[k],
-                  selected: selected == k,
-                  semanticLabel: l.colorNumber(k + 1),
-                  onTap: () => setState(() => selected = k),
+            const SizedBox(height: 16),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 10,
+              children: [
+                for (var k = 0; k < kCrayons.length; k++)
+                  CrayonDot(
+                    size: 40,
+                    color: kCrayons[k],
+                    selected: selected == k,
+                    semanticLabel: l.colorNumber(k + 1),
+                    onTap: () => setState(() => selected = k),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: GlassActionPill(icon: KpIcons.undo, label: l.undo, onTap: _history.isEmpty ? null : _undo),
                 ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Row(
-            children: [
-              Expanded(
-                child: GlassActionPill(icon: KpIcons.undo, label: l.undo, onTap: _history.isEmpty ? null : _undo),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: GlassActionPill(
-                  icon: KpIcons.check,
-                  label: l.done,
-                  onTap: fills.any((f) => f != null) ? _done : null,
-                  active: fills.every((f) => f != null),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: GlassActionPill(
+                    icon: KpIcons.check,
+                    label: l.done,
+                    onTap: fills.any((f) => f != null) ? _done : null,
+                    active: fills.every((f) => f != null),
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
