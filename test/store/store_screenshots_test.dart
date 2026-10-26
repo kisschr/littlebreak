@@ -201,14 +201,17 @@ Future<AppState> _seededState(String lang) async {
 
   // Coloured pictures for the gallery.
   for (final (i, id) in ['pumpkin', 'leaf', 'hedgehog', 'mushroom', 'butterfly', 'sun'].indexed) {
-    final motif = Motifs.byId(id);
+    final motif = Motifs.byId('${Motifs.detailedPrefix}$id');
     await state.addToGallery(
       GalleryItem(
         dateKey: dateKey(DateTime(_today.year, _today.month, 19 - i * 7 % 18)),
         gameId: GameType.coloring.id,
-        motif: id,
+        motif: motif.id,
         difficulty: Difficulty.standard,
-        colors: [for (final r in motif.regions) kCrayons[r.crayon].toARGB32()],
+        colors: [
+          for (final (k, r) in motif.regions.indexed)
+            k < motif.optional && k % 3 == 0 ? null : kCrayons[r.crayon].toARGB32(),
+        ],
       ),
     );
   }

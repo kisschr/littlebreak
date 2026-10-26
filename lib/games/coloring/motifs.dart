@@ -7,6 +7,7 @@ import 'package:path_drawing/path_drawing.dart';
 import '../../core/dates.dart';
 import '../../core/seeded_random.dart';
 import '../../domain/models.dart';
+import 'motif_detail.dart';
 
 /// The crayon box shared by coloring and pixel art.
 const List<Color> kCrayons = [
@@ -43,10 +44,20 @@ class MotifRegion {
 /// A line drawing on a 100×100 canvas made of fillable regions. Regions are
 /// painted in order, so later ones lie on top (and win hit tests).
 class Motif {
-  const Motif(this.id, this.regions, {this.details = const []});
+  const Motif(this.id, this.regions, {this.details = const [], this.fine = false, this.contour, this.optional = 0});
 
   final String id;
   final List<MotifRegion> regions;
+
+  /// Detailed pages with many small regions get thinner outlines.
+  final bool fine;
+
+  /// Silhouette drawn with a full-width line over fine outlines.
+  final Path? contour;
+
+  /// The first [optional] regions (a detailed page's background) need no
+  /// colour for the picture to count as finished.
+  final int optional;
 
   /// Extra lines that are drawn but not fillable (veins, smiles).
   final List<Path> details;
@@ -167,7 +178,23 @@ abstract final class Motifs {
 
   static Iterable<String> get ids => _builders.keys;
 
-  static Motif byId(String id) => _cache[id] ??= (_builders[id] ?? _flower)();
+  /// Ids of the detailed adult versions: this prefix + the simple id.
+  static const detailedPrefix = 'detailed:';
+
+  /// A motif by id; `detailed:<id>` gives the adults' detailed version.
+  static Motif byId(String id) => _cache[id] ??= id.startsWith(detailedPrefix)
+      ? MotifDetailer.detail((_adultBases[baseId(id)] ?? () => byId(baseId(id)))())
+      : (_builders[id] ?? _flower)();
+
+  /// Grown-up bases for motifs whose kids' version has a face.
+  static final Map<String, Motif Function()> _adultBases = {'pumpkin': _harvestPumpkin};
+
+  /// The simple motif an id is based on (names, sticker lookup).
+  static String baseId(String id) => id.startsWith(detailedPrefix) ? id.substring(detailedPrefix.length) : id;
+
+  /// The page a player colours: detailed for adults, simple for kids.
+  static String pageFor(DayPlan plan, Audience audience) =>
+      audience == Audience.adult ? '$detailedPrefix${idFor(plan)}' : idFor(plan);
 
   /// The motif of a day: the special day's motif, else a seasonal one. The
   /// same on every level, so thumbnail, game and gallery agree.
@@ -177,16 +204,40 @@ abstract final class Motifs {
     return SeededRandom.fromParts([dateKey(plan.date), 'motif']).pick(byMonth[plan.date.month]!);
   }
 
-  static Motif _pumpkin() => Motif('pumpkin', [
-        _r(_rect(46, 12, 8, 16, 3), Crayon.brown),
-        _r(_ellipse(64, 20, 12, 6, -20), Crayon.green),
-        _r(_ellipse(32, 60, 22, 28), Crayon.orange),
-        _r(_ellipse(68, 60, 22, 28), Crayon.orange),
-        _r(_ellipse(50, 60, 18, 30), Crayon.yellow),
-        _r(_poly([34, 50, 44, 50, 39, 40]), Crayon.dark),
-        _r(_poly([56, 50, 66, 50, 61, 40]), Crayon.dark),
-        _r(_poly([32, 66, 40, 72, 46, 66, 50, 72, 54, 66, 60, 72, 68, 66, 62, 78, 38, 78]), Crayon.dark),
-      ]);
+  /// A round, friendly pumpkin with big shiny eyes and rosy cheeks.
+  static Motif _pumpkin() => Motif(
+        'pumpkin',
+        [
+          _r(_svg('M45 34 Q43 20 49 12 L56 14 Q51 22 54 34 Z'), Crayon.brown),
+          _r(_ellipse(67, 22, 12, 6, -25), Crayon.green),
+          _r(_ellipse(31, 62, 22, 26), Crayon.orange),
+          _r(_ellipse(69, 62, 22, 26), Crayon.orange),
+          _r(_ellipse(50, 62, 20, 29), Crayon.yellow),
+          _r(_ellipse(33, 70, 5.5, 3.8), Crayon.pink),
+          _r(_ellipse(67, 70, 5.5, 3.8), Crayon.pink),
+          _r(_circle(40, 59, 6.5), Crayon.dark),
+          _r(_circle(60, 59, 6.5), Crayon.dark),
+          _r(_circle(42.2, 56.6, 2.4), Crayon.white),
+          _r(_circle(62.2, 56.6, 2.4), Crayon.white),
+          _r(_svg('M43 69 Q50 79 57 69 Q50 72 43 69 Z'), Crayon.red),
+        ],
+        details: [_line('M57 22 C62 30 74 31 75 25 C76 20 69 19 70 24')],
+      );
+
+  /// A five-lobed harvest pumpkin without a face, for the detailed page.
+  static Motif _harvestPumpkin() => Motif(
+        'pumpkin',
+        [
+          _r(_svg('M45 34 Q43 20 49 12 L56 14 Q51 22 54 34 Z'), Crayon.brown),
+          _r(_ellipse(67, 22, 12, 6, -25), Crayon.green),
+          _r(_ellipse(27, 63, 17, 23), Crayon.orange),
+          _r(_ellipse(73, 63, 17, 23), Crayon.orange),
+          _r(_ellipse(38, 62, 17, 27), Crayon.yellow),
+          _r(_ellipse(62, 62, 17, 27), Crayon.yellow),
+          _r(_ellipse(50, 62, 14, 29), Crayon.orange),
+        ],
+        details: [_line('M57 22 C62 30 74 31 75 25 C76 20 69 19 70 24')],
+      );
 
   static Motif _heart() {
     Path heart(double cx, double cy, double s) => _place(

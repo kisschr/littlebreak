@@ -1,4 +1,5 @@
 import '../domain/models.dart';
+import '../games/coloring/motifs.dart';
 import 'generated/app_localizations.dart';
 
 /// Typed access to texts that depend on an enum or an id, so screens never
@@ -145,7 +146,7 @@ extension KpTexts on AppLocalizations {
         _ => null,
       };
 
-  String motifName(String id) => switch (id) {
+  String motifName(String id) => switch (Motifs.baseId(id)) {
         'pumpkin' => motifPumpkin,
         'heart' => motifHeart,
         'flower' => motifFlower,
