@@ -1,0 +1,27 @@
+# Renders the store screenshots (Android phone, iPhone 6.9", iPad 13";
+# German and English) on demand. Takes about three minutes; no emulator.
+name: Store screenshots
+
+on:
+  workflow_dispatch:
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.7
+          channel: stable
+          cache: true
+          pub-cache: true
+      - run: flutter pub get
+      - run: flutter gen-l10n
+      - run: flutter test test/store --dart-define=STORE_SHOTS=true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: store-screenshots
+          path: build/store_screenshots/
+          retention-days: 30

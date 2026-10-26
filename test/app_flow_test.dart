@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -10,6 +12,7 @@ import 'package:kleine_pause/data/premium.dart';
 import 'package:kleine_pause/data/quote_quiz.dart';
 import 'package:kleine_pause/data/repositories.dart';
 import 'package:kleine_pause/domain/models.dart';
+import 'package:kleine_pause/screens/kids/sticker.dart';
 import 'package:kleine_pause/screens/play/result_screen.dart';
 import 'package:kleine_pause/widgets/ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -103,5 +106,37 @@ void main() {
     await _pumpApp(tester, state);
     expect(find.textContaining('Mia'), findsWidgets);
     expect(find.byType(AdSlot), findsNothing);
+  });
+
+  testWidgets('a coloured sticker is kept and continues where it was left', (tester) async {
+    final state = await _state();
+    await state.createProfile(name: 'Mia', audience: Audience.kid);
+    await _pumpApp(tester, state);
+    final day = DateTime(2026, 10, 5);
+    final navigator = tester.state<NavigatorState>(find.byType(Navigator).first);
+
+    unawaited(navigator.push(FreeColoringScreen.route(day)));
+    await _settle(tester);
+    // Paint the whole board once: every region gets the first crayon.
+    final board = find.bySemanticsLabel('Ausmalbild');
+    final box = tester.getRect(board);
+    for (var y = 0.1; y < 1; y += 0.1) {
+      for (var x = 0.1; x < 1; x += 0.1) {
+        await tester.tapAt(Offset(box.left + box.width * x, box.top + box.height * y));
+      }
+    }
+    await tester.pump();
+    navigator.pop();
+    await _settle(tester);
+
+    final saved = state.gallery.singleWhere((g) => g.gameId == Stickers.galleryId);
+    expect(saved.dateKey, '2026-10-05');
+    final painted = saved.colors.where((c) => c != null).length;
+    expect(painted, greaterThan(0));
+
+    unawaited(navigator.push(FreeColoringScreen.route(day)));
+    await _settle(tester);
+    final restored = tester.state(find.byType(FreeColoringScreen)) as dynamic;
+    expect((restored.fills as List).where((f) => f != null).length, painted);
   });
 }

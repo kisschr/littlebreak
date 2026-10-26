@@ -37,7 +37,7 @@ class MotifPainter extends CustomPainter {
     final fill = Paint()..style = PaintingStyle.fill;
     final stroke = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = lineWidth
+      ..strokeWidth = motif.fine ? lineWidth * 0.5 : lineWidth
       ..strokeJoin = StrokeJoin.round
       ..color = lineColor;
     for (var i = 0; i < motif.regions.length; i++) {
@@ -49,6 +49,8 @@ class MotifPainter extends CustomPainter {
     for (final d in motif.details) {
       canvas.drawPath(d, stroke);
     }
+    final contour = motif.contour;
+    if (contour != null) canvas.drawPath(contour, stroke..strokeWidth = lineWidth);
     final labels = numbers;
     if (labels != null) {
       final anchors = MotifAnchors.of(motif);
@@ -103,10 +105,7 @@ class MotifAnchors {
     }
     return [
       for (final points in visible)
-        if (points.isEmpty)
-          const MotifAnchors(Offset(-100, -100), 0)
-        else
-          _anchor(points),
+        if (points.isEmpty) const MotifAnchors(Offset(-100, -100), 0) else _anchor(points),
     ];
   }
 

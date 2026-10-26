@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../app/app_state.dart';
@@ -13,6 +12,7 @@ import '../l10n/generated/app_localizations.dart';
 import '../l10n/texts.dart';
 import '../widgets/artwork_view.dart';
 import '../widgets/page.dart';
+import '../widgets/sheet.dart';
 
 /// Every finished coloring and pixel picture of the profile.
 class GalleryScreen extends StatelessWidget {
@@ -94,13 +94,9 @@ class _GalleryTile extends StatelessWidget {
 
   void _open(BuildContext context) {
     final l = AppLocalizations.of(context);
-    GlassModalSheet.show<void>(
+    showKpSheet<void>(
       context: context,
-      topBorderRadius: KpGlassStyle.sheetRadius,
-      bottomBorderRadius: KpGlassStyle.sheetRadius,
-      settings: KpGlassStyle.sheet,
-      initialState: GlassSheetState.full,
-      detents: const {GlassSheetDetent.large},
+      full: true,
       builder: (context) {
         final palette = KpPalette.of(context);
         return Padding(

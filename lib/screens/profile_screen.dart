@@ -13,6 +13,8 @@ import '../widgets/page.dart';
 import 'premium_sheet.dart';
 import 'profile_picker_screen.dart';
 import 'reminder_settings.dart';
+import '../widgets/sheet.dart';
+import '../widgets/dialog.dart';
 
 /// Profile, statistics and settings. Also the parents' area of a kids
 /// profile (opened behind the parental gate, with a close button).
@@ -145,13 +147,9 @@ class ProfileScreen extends StatelessWidget {
   Future<void> _pickLanguage(BuildContext context) {
     final l = AppLocalizations.of(context);
     final state = context.read<AppState>();
-    return GlassModalSheet.show<void>(
+    return showKpSheet<void>(
       context: context,
-      topBorderRadius: KpGlassStyle.sheetRadius,
-      bottomBorderRadius: KpGlassStyle.sheetRadius,
-      settings: KpGlassStyle.sheet,
       halfSize: 0.45,
-      detents: const {GlassSheetDetent.medium},
       builder: (context) {
         final palette = KpPalette.of(context);
         Widget option(String? code, String label) => Padding(
@@ -191,13 +189,9 @@ class ProfileScreen extends StatelessWidget {
     final l = AppLocalizations.of(context);
     final state = context.read<AppState>();
     final controller = TextEditingController(text: profile.name);
-    return GlassModalSheet.show<void>(
+    return showKpSheet<void>(
       context: context,
-      topBorderRadius: KpGlassStyle.sheetRadius,
-      bottomBorderRadius: KpGlassStyle.sheetRadius,
-      settings: KpGlassStyle.sheet,
-      initialState: GlassSheetState.full,
-      detents: const {GlassSheetDetent.large},
+      full: true,
       builder: (context) {
         final palette = KpPalette.of(context);
         void save() {
@@ -232,13 +226,13 @@ class ProfileScreen extends StatelessWidget {
     final l = AppLocalizations.of(context);
     final state = context.read<AppState>();
     final navigator = Navigator.of(context);
-    return GlassDialog.show<void>(
+    return KpDialog.show<void>(
       context: context,
       title: l.deleteProfileTitle(profile.name),
       message: l.deleteProfileBody,
       actions: [
-        GlassDialogAction(label: l.cancel, isPrimary: true, onPressed: () => Navigator.of(context).pop()),
-        GlassDialogAction(
+        KpDialogAction(label: l.cancel, isPrimary: true, onPressed: () => Navigator.of(context).pop()),
+        KpDialogAction(
           label: l.delete,
           isDestructive: true,
           onPressed: () {

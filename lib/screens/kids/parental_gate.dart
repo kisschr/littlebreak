@@ -1,23 +1,19 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 
 import '../../design/components.dart';
 import '../../design/palette.dart';
 import '../../l10n/generated/app_localizations.dart';
+import '../../widgets/sheet.dart';
 
 /// "Frag deine Eltern": a multiplication only grown-ups solve quickly. Guards
 /// purchases, settings and leaving a kids profile.
 abstract final class ParentalGate {
   static Future<bool> ask(BuildContext context, {math.Random? random}) async {
-    final ok = await GlassModalSheet.show<bool>(
+    final ok = await showKpSheet<bool>(
       context: context,
-      topBorderRadius: KpGlassStyle.sheetRadius,
-      bottomBorderRadius: KpGlassStyle.sheetRadius,
-      settings: KpGlassStyle.sheet,
       halfSize: 0.6,
-      detents: const {GlassSheetDetent.medium},
       builder: (_) => SingleChildScrollView(child: _GatePanel(random: random ?? math.Random())),
     );
     return ok ?? false;

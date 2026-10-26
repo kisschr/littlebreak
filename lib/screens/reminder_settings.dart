@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../app/app_state.dart';
 import '../design/components.dart';
 import '../design/palette.dart';
 import '../l10n/generated/app_localizations.dart';
+import '../widgets/sheet.dart';
+import '../widgets/dialog.dart';
 
 /// "8:00" / "8:00 AM" in the user's locale.
 String formatTime(BuildContext context, int hour, int minute) =>
     MaterialLocalizations.of(context).formatTimeOfDay(TimeOfDay(hour: hour, minute: minute));
 
 /// Daily reminder: on/off and time.
-Future<void> showReminderSettings(BuildContext context) => GlassModalSheet.show<void>(
+Future<void> showReminderSettings(BuildContext context) => showKpSheet<void>(
       context: context,
-      topBorderRadius: KpGlassStyle.sheetRadius,
-      bottomBorderRadius: KpGlassStyle.sheetRadius,
-      settings: KpGlassStyle.sheet,
       halfSize: 0.42,
-      detents: const {GlassSheetDetent.medium},
       builder: (_) => const Material(type: MaterialType.transparency, child: SingleChildScrollView(child: ReminderPanel())),
     );
 
@@ -35,11 +32,11 @@ class ReminderPanel extends StatelessWidget {
           body: l.reminderBody,
         );
     if (!ok && context.mounted) {
-      await GlassDialog.show<void>(
+      await KpDialog.show<void>(
         context: context,
         title: l.reminderDeniedTitle,
         message: l.reminderDeniedBody,
-        actions: [GlassDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
+        actions: [KpDialogAction(label: l.ok, isPrimary: true, onPressed: () => Navigator.of(context).pop())],
       );
     }
   }

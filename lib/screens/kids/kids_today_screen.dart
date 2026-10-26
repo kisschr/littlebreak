@@ -17,6 +17,7 @@ import '../play/how_to_sheet.dart';
 import '../play/play_flow.dart';
 import '../profile_screen.dart';
 import 'parental_gate.dart';
+import 'sticker.dart';
 
 /// "Hallo Mia!" — today's game in big, friendly type, with read-aloud.
 class KidsTodayScreen extends StatelessWidget {
@@ -40,6 +41,12 @@ class KidsTodayScreen extends StatelessWidget {
     final monthStickers = state.stats.monthProgress(today.year, today.month, today).played;
     final left = stickersPerPage - monthStickers;
     final monthName = DateFormat.MMMM(locale).format(today);
+    // The three newest stickers, oldest first, for the row on the card.
+    final recent = [
+      for (var d = 0; d < 62; d++)
+        if (state.stats.playedOn(DateTime(today.year, today.month, today.day - d)))
+          DateTime(today.year, today.month, today.day - d),
+    ].take(3).toList().reversed.toList();
     return KpScrollBody(
       withTabBar: true,
       children: [
@@ -123,7 +130,7 @@ class KidsTodayScreen extends StatelessWidget {
                     : GameThumbnail(plan: plan, size: 160, tilt: false),
               ),
               const SizedBox(height: 14),
-              Text(title, style: KpText.title(palette.ink, size: 28)),
+              KpFitText(title, style: KpText.title(palette.ink, size: 28)),
               const SizedBox(height: 2),
               Text(prompt, style: KpText.label(palette.inkSoft, size: 16, weight: FontWeight.w700)),
               const SizedBox(height: 14),
@@ -158,15 +165,17 @@ class KidsTodayScreen extends StatelessWidget {
                     for (var i = 0; i < 3; i++)
                       Positioned(
                         left: i * 28.0,
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: [palette.highlight, palette.blobs[2], palette.successSoft][i],
-                            border: Border.all(color: Colors.white, width: 3),
-                          ),
-                        ),
+                        child: i < recent.length
+                            ? StickerBadge(day: recent[i], size: 40, onTap: () => showSticker(context, recent[i]))
+                            : Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: [palette.highlight, palette.blobs[2], palette.successSoft][i],
+                                  border: Border.all(color: Colors.white, width: 3),
+                                ),
+                              ),
                       ),
                   ],
                 ),

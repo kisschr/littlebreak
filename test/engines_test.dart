@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kleine_pause/core/seeded_random.dart';
 import 'package:kleine_pause/domain/models.dart';
 import 'package:kleine_pause/games/anagram/anagram_game.dart';
+import 'package:kleine_pause/games/coloring/motif_painter.dart';
 import 'package:kleine_pause/games/coloring/motifs.dart';
 import 'package:kleine_pause/games/game_2048/game_2048.dart';
 import 'package:kleine_pause/games/game_framework.dart';
@@ -203,6 +204,26 @@ void main() {
         final pixels = m.rasterize(12);
         expect(pixels.whereType<int>().length, greaterThan(10), reason: id);
       }
+    });
+
+    test('detailed pages: every region can be tapped where its number sits', () {
+      for (final id in Motifs.ids) {
+        final m = Motifs.byId('${Motifs.detailedPrefix}$id');
+        expect(m.fine, isTrue);
+        expect(m.regions.length, greaterThan(Motifs.byId(id).regions.length * 4), reason: id);
+        expect(m.optional, inInclusiveRange(1, m.regions.length - 1), reason: id);
+        final anchors = MotifAnchors.of(m);
+        for (var i = 0; i < m.regions.length; i++) {
+          expect(m.regionAt(anchors[i].center), i, reason: '$id region $i');
+        }
+      }
+    });
+
+    test('adults colour the detailed page, kids the simple one', () {
+      final plan = DayPlan(date: DateTime(2026, 10, 31), type: GameType.coloring, dayNumber: 304, motif: 'pumpkin');
+      expect(Motifs.pageFor(plan, Audience.adult), 'detailed:pumpkin');
+      expect(Motifs.pageFor(plan, Audience.kid), 'pumpkin');
+      expect(Motifs.baseId('detailed:pumpkin'), 'pumpkin');
     });
 
     test('all levels of a day share the motif', () {

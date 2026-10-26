@@ -50,7 +50,12 @@ class KpScrollBody extends StatelessWidget {
     final insets = MediaQuery.paddingOf(context);
     final bottom = insets.bottom + (withTabBar ? 112 : 24);
     return ListView(
-      padding: padding.copyWith(top: insets.top + padding.top, bottom: bottom),
+      padding: padding.copyWith(
+        top: insets.top + padding.top,
+        bottom: bottom,
+        left: kpSideInset(context, padding.left),
+        right: kpSideInset(context, padding.right),
+      ),
       children: [
         for (var i = 0; i < children.length; i++) ...[if (i > 0) SizedBox(height: spacing), children[i]],
       ],

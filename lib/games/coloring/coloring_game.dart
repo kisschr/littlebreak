@@ -74,7 +74,7 @@ class _ColoringGameState extends State<ColoringGame> {
   void initState() {
     super.initState();
     final s = widget.session;
-    motif = Motifs.byId(Motifs.idFor(s.plan));
+    motif = Motifs.byId(Motifs.pageFor(s.plan, s.audience));
     fills = List<int?>.filled(motif.regions.length, null);
     crayons = byNumbers
         ? (motif.regions.map((r) => r.crayon).toSet().toList()..sort())
@@ -85,7 +85,7 @@ class _ColoringGameState extends State<ColoringGame> {
 
   int? _numberOf(int region) => crayons.indexOf(motif.regions[region].crayon) + 1;
 
-  bool get _allFilled => fills.every((f) => f != null);
+  bool get _allFilled => fills.skip(motif.optional).every((f) => f != null);
 
   void _paint(Offset local, double side) {
     if (controller.paused || controller.finished) return;
@@ -104,7 +104,7 @@ class _ColoringGameState extends State<ColoringGame> {
 
   bool _hint() {
     // Colours one empty region the way the motif intends.
-    final i = fills.indexWhere((f) => f == null);
+    final i = fills.indexWhere((f) => f == null, motif.optional);
     if (i < 0) return false;
     setState(() {
       _history.add(List.of(fills));
@@ -145,22 +145,26 @@ class _ColoringGameState extends State<ColoringGame> {
           child: AspectRatio(
             aspectRatio: 1,
             child: LayoutBuilder(
-              builder: (context, c) => GestureDetector(
-                onTapUp: (d) => _paint(d.localPosition, c.maxWidth),
-                child: Semantics(
-                  label: l.coloringLabel,
-                  child: CustomPaint(
-                    size: Size.square(c.maxWidth),
-                    painter: MotifPainter(
-                      motif: motif,
-                      fills: colors,
-                      lineColor: palette.ink,
-                      numbers: byNumbers ? [for (var i = 0; i < fills.length; i++) _numberOf(i)] : null,
-                      numberColor: palette.inkSoft,
+              builder: (context, c) {
+                final page = GestureDetector(
+                  onTapUp: (d) => _paint(d.localPosition, c.maxWidth),
+                  child: Semantics(
+                    label: l.coloringLabel,
+                    child: CustomPaint(
+                      size: Size.square(c.maxWidth),
+                      painter: MotifPainter(
+                        motif: motif,
+                        fills: colors,
+                        lineColor: palette.ink,
+                        numbers: byNumbers ? [for (var i = 0; i < fills.length; i++) _numberOf(i)] : null,
+                        numberColor: palette.inkSoft,
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+                // Detailed pages have small areas: pinch to zoom in.
+                return motif.fine ? InteractiveViewer(maxScale: 5, child: page) : page;
+              },
             ),
           ),
         ),
@@ -185,11 +189,18 @@ class _ColoringGameState extends State<ColoringGame> {
         const SizedBox(height: 16),
         Row(
           children: [
-            Expanded(child: GlassActionPill(icon: KpIcons.undo, label: l.undo, onTap: _history.isEmpty ? null : _undo)),
+            Expanded(
+              child: GlassActionPill(icon: KpIcons.undo, label: l.undo, onTap: _history.isEmpty ? null : _undo),
+            ),
             if (!byNumbers) ...[
               const SizedBox(width: 10),
               Expanded(
-                child: GlassActionPill(icon: KpIcons.check, label: l.done, onTap: _allFilled ? _finish : null, active: _allFilled),
+                child: GlassActionPill(
+                  icon: KpIcons.check,
+                  label: l.done,
+                  onTap: _allFilled ? _finish : null,
+                  active: _allFilled,
+                ),
               ),
             ],
           ],
@@ -197,10 +208,12 @@ class _ColoringGameState extends State<ColoringGame> {
         const SizedBox(height: 10),
         ListenableBuilder(
           listenable: controller,
-          builder: (context, _) => GameStatusLine(parts: [
-            l.areasColored(fills.where((f) => f != null).length, fills.length),
-            if (byNumbers) l.mistakesCount(controller.mistakes),
-          ]),
+          builder: (context, _) => GameStatusLine(
+            parts: [
+              l.areasColored(fills.where((f) => f != null).length, fills.length),
+              if (byNumbers) l.mistakesCount(controller.mistakes),
+            ],
+          ),
         ),
       ],
     );
@@ -244,7 +257,10 @@ class CrayonDot extends StatelessWidget {
           padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: selected ? palette.ink : Colors.white.withValues(alpha: 0.7), width: selected ? 3 : 2),
+            border: Border.all(
+              color: selected ? palette.ink : Colors.white.withValues(alpha: 0.7),
+              width: selected ? 3 : 2,
+            ),
           ),
           child: Container(
             decoration: BoxDecoration(
@@ -255,7 +271,10 @@ class CrayonDot extends StatelessWidget {
             alignment: Alignment.center,
             child: label == null
                 ? null
-                : Text(label!, style: KpText.label(light ? palette.ink : Colors.white, size: 16, weight: FontWeight.w900)),
+                : Text(
+                    label!,
+                    style: KpText.label(light ? palette.ink : Colors.white, size: 16, weight: FontWeight.w900),
+                  ),
           ),
         ),
       ),

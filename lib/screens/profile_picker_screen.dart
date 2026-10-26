@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../app/app_state.dart';
@@ -10,6 +9,7 @@ import '../domain/models.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../l10n/texts.dart';
 import '../widgets/page.dart';
+import '../widgets/sheet.dart';
 
 /// "Wer spielt heute?" — choose or create a profile.
 class ProfilePickerScreen extends StatelessWidget {
@@ -161,13 +161,9 @@ class _NewProfileTile extends StatelessWidget {
 
 /// Asks for a name and creates the profile.
 Future<void> showCreateProfileSheet(BuildContext context, Audience audience) {
-  return GlassModalSheet.show<void>(
+  return showKpSheet<void>(
     context: context,
-    topBorderRadius: KpGlassStyle.sheetRadius,
-    bottomBorderRadius: KpGlassStyle.sheetRadius,
-    settings: KpGlassStyle.sheet,
-    detents: const {GlassSheetDetent.large},
-    initialState: GlassSheetState.full,
+    full: true,
     builder: (_) => _CreateProfileSheet(audience: audience, state: context.read<AppState>()),
   );
 }
@@ -206,7 +202,7 @@ class _CreateProfileSheetState extends State<_CreateProfileSheet> {
     return Material(
       type: MaterialType.transparency,
       child: Padding(
-      padding: EdgeInsets.fromLTRB(20, 24, 20, 24 + MediaQuery.viewInsetsOf(context).bottom),
+      padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -234,7 +230,10 @@ class _CreateProfileSheetState extends State<_CreateProfileSheet> {
 }
 
 /// Opaque white text field used inside glass sheets.
-class KpTextField extends StatelessWidget {
+///
+/// Takes focus only once the sheet has finished sliding in: opening the
+/// keyboard during the slide makes every frame relayout the glass sheet.
+class KpTextField extends StatefulWidget {
   const KpTextField({super.key, required this.controller, required this.hint, this.onSubmitted});
 
   final TextEditingController controller;
@@ -242,18 +241,56 @@ class KpTextField extends StatelessWidget {
   final ValueChanged<String>? onSubmitted;
 
   @override
+  State<KpTextField> createState() => _KpTextFieldState();
+}
+
+class _KpTextFieldState extends State<KpTextField> {
+  final _focus = FocusNode();
+  Animation<double>? _route;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_route != null) return;
+    _route = ModalRoute.of(context)?.animation;
+    if (_route == null || _route!.isCompleted) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => _focusNow());
+    } else {
+      _route!.addStatusListener(_onRouteStatus);
+    }
+  }
+
+  void _onRouteStatus(AnimationStatus status) {
+    if (status.isCompleted) {
+      _route!.removeStatusListener(_onRouteStatus);
+      _focusNow();
+    }
+  }
+
+  void _focusNow() {
+    if (mounted) _focus.requestFocus();
+  }
+
+  @override
+  void dispose() {
+    _route?.removeStatusListener(_onRouteStatus);
+    _focus.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final palette = KpPalette.of(context);
     return TextField(
-      controller: controller,
-      autofocus: true,
+      controller: widget.controller,
+      focusNode: _focus,
       maxLength: 20,
       textCapitalization: TextCapitalization.words,
       textInputAction: TextInputAction.done,
-      onSubmitted: onSubmitted,
+      onSubmitted: widget.onSubmitted,
       style: KpText.title(palette.ink, size: 20),
       decoration: InputDecoration(
-        hintText: hint,
+        hintText: widget.hint,
         hintStyle: KpText.title(palette.inkSoft.withValues(alpha: 0.5), size: 20),
         counterText: '',
         filled: true,

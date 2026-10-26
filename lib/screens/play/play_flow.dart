@@ -3,12 +3,12 @@ import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../../app/app_state.dart';
-import '../../design/components.dart';
 import '../../domain/access.dart';
 import '../../domain/models.dart';
 import '../premium_sheet.dart';
 import 'game_screen.dart';
 import 'level_sheet.dart';
+import '../../widgets/sheet.dart';
 
 /// The way from a calendar day to a running game, shared by Today, the
 /// calendar and the kids' screens.
@@ -42,14 +42,10 @@ abstract final class PlayFlow {
 
   static Future<Difficulty?> chooseLevel(BuildContext context, DayPlan plan, {GlassMorphAnchor? anchor}) {
     final state = context.read<AppState>();
-    return GlassModalSheet.show<Difficulty>(
+    return showKpSheet<Difficulty>(
       context: context,
-      topBorderRadius: KpGlassStyle.sheetRadius,
-      bottomBorderRadius: KpGlassStyle.sheetRadius,
-      morphFrom: anchor,
-      settings: KpGlassStyle.sheet,
       halfSize: 0.6,
-      detents: const {GlassSheetDetent.medium},
+      morphFrom: anchor,
       builder: (_) => SingleChildScrollView(
         child: LevelSheet(
           plan: plan,
